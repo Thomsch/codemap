@@ -102,6 +102,36 @@
     .footer a:hover {
       color: #ce3333;
     }
+
+    .nested-model div {
+      margin-right:5px;
+      margin-bottom:5px;
+
+      padding-left: 5px;
+      padding-top: 5px;
+
+      border: 1px solid
+    }
+
+    .nested-model p strong {
+      font-variant: all-small-caps;
+    }
+
+    .domain { 
+      background-color: #ffcfa0;
+    }
+
+    .abstraction {
+      background-color:#fffea0
+    }
+
+    .technique {
+      background-color: #cbfecf
+    }
+
+    .algorithm {
+      background-color: #d6d4ff
+    }
   </style>
 </head>
 
@@ -148,6 +178,40 @@
       <p>
         Thus, with this final project, we aim to explore individual visualization to represent different levels of abstraction in source code. The visualizations will be focused on working from a local perspective (i.e., showing dependencies from a given method rather than showing the entire dependency graph) and interactivity based on existing visualization techniques (e.g., Voronoi, Hyperbolic Layout, Hierarchical Edge Bundling, Radial Tree). This project will not implement the mechanisms to blend the visualization of the levels of abstraction, this will be for another time. Additionally, this project will not focus on the integration between the visualization and the IDE because the basic mechanisms were implemented in the previous prototype. 
       </p>
+
+      <div class="nested-model">
+        <div class="domain">
+          <p><strong>Domain Problem and Data Characterization</strong></p>
+          <p>
+            We are interested to help the developer build a mental image of the source code. Mental image of the source code is necessary before fixing a bug or implementing a new feature to locate artifacts or interest.
+          </p>
+          <p>
+            Conducted a user study on a rough visualization prototype integrated to Visual Studio Code as a plugin to gather initial feedback. Participants noted that integration was really important and made heavy use of click through to go from one method to another. Also found the zooming feature useful to answer questions.
+          </p>
+
+          <div class="abstraction">
+            <p><strong>Operation and Data Type Abstraction</strong></p>
+            <p>Network graph. Edges are links between artifacts. Nodes are methods.</p>
+
+            <div class="technique">
+              <p><strong>Visual Encoding and Interaction Design</strong></p>
+              <p>
+                <ul style="list-style: none">
+                  <li>Hide / Show artifact</li>
+                  <li>Pin / Unpin artifact</li>
+                  <li>Navigate: click on links, zoom, pan</li>
+                  <li>Drill down / Up artifact: class > method > logic?</li>
+                </ul>
+              </p>
+
+              <div class="algorithm">
+                <p><strong>Algorithm Design</strong></p>
+                <p>Voronoi, Hyperbolic Layout, Hierarchical Edge Bundling, Radial Tree</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <h2>
         Classes
