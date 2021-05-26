@@ -123,15 +123,44 @@
     <section>
       <h2>Final Project</h2>
       <p>
-        We explore local interactive software visualizations that helps the developer understand a software artifact's (e.g., class, method) neighborhood necessary to fix bugs and develop new features.
+        As part of an on-going <a href="https://www.notion.so/Codemap-ec02c79cb0b44304ba10767af1ca3788">research project</a>, we explore local interactive software visualizations that helps the developer understand a software artifact's (e.g., class, method) neighborhood necessary to fix bugs and develop new features.
       </p>
 
-      <!-- <p>
-        Context and Challenges
-      </p> -->
+      <p>
+        Previously, we conducted a user study to evaluate if an integrated interactive visualization to an IDE was useful to developers to navigate source code, and find related classes and methods. For this we developed a <a href="https://github.com/amyjzhu/503-hacking/">simple prototype</a> to support the experiment. The visualization used a zooming technique, similar in essence to Google Maps, to move between different levels of abstraction.
+      </p>
+      
+      <p>
+        We found that the visualization was generally helpful to the participants. Specifically, the following features were promising: 
+
+        <ul>
+          <li>The visualization is initially centered on the class the user is editing</li>
+          <li>Moving seamlessly between levels of abstraction visually (similarly to Google Maps)</li>
+          <li>Switching between the source code of a class and its visualization with a click</li>
+          <li>Exploring dependencies interactively (by clicking on the edge connecting the methods or classes)</li>
+        </ul>
+      </p>
 
       <p>
-        Please see my <a href="https://www.notion.so/Codemap-ec02c79cb0b44304ba10767af1ca3788">research project's page</a> for more details.
+      We also found that the representation of each level of abstraction was lacking. Participants complained that packages, classes, and method were too far apart or too close together, creating occlusion problems in the latter case. These issues stem from the force layout we used. We also ran into performance and complexity issues with larger code bases that we mitigated with interactive filters and just-in-time rendering.
+      </p>
+
+      <p>
+        Thus, with this final project, we aim to explore individual visualization to represent different levels of abstraction in source code. The visualizations will be focused on working from a local perspective (i.e., showing dependencies from a given method rather than showing the entire dependency graph) and interactivity based on existing visualization techniques (e.g., Voronoi, Hyperbolic Layout, Hierarchical Edge Bundling, Radial Tree). This project will not implement the mechanisms to blend the visualization of the levels of abstraction, this will be for another time. Additionally, this project will not focus on the integration between the visualization and the IDE because the basic mechanisms were implemented in the previous prototype. 
+      </p>
+
+      <h2>
+        Classes
+      </h2>
+      <p>
+        In this prototype, we explore how classes can be visualized from an initial perspective.
+      </p>
+
+      <h2>
+        Methods
+      </h2>
+      <p>
+        In this prototype, we explore how dependencies between methods can be visualized from an initial method.
       </p>
 
       <h2>Initial Prompt</h2>
