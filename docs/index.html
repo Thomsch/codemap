@@ -3,136 +3,9 @@
 
 <head>
   <title>CSE512 | Final Project</title>
-  <style media="all">
-    * {
-      padding: 0;
-      margin: 0;
-    }
 
-    body {
-      margin: 0 auto 0 auto;
-      padding: 0;
-      max-width: 1200px;
-      font-family: "Avenir", "Avenir Next", Helvetica Neue, Arial;
-      font-size: 0.95em;
-    }
-
-    a,
-    a:visited {
-      text-decoration: none;
-      color: #7533f4;
-    }
-
-    a:hover {
-      text-decoration: underline;
-      color: #f4b014;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5 {
-      color: #492a7c;
-      background-color: inherit;
-      font-weight: normal;
-      padding: 0 0 5px 0;
-      margin: 15px 0 0 0;
-      border: none;
-      clear: right;
-    }
-
-    h1 {
-      font-size: 24pt;
-      margin: 5px 0 10px 0;
-      line-height: 28px;
-    }
-
-    h2 {
-      font-size: 14pt;
-      margin: 30px 0 15px 0;
-      letter-spacing: 0.01em;
-      border-bottom: 1px solid #ccc;
-      line-height: 20px;
-    }
-
-    h3 {
-      font-size: 13pt;
-    }
-
-    h4 {
-      font-size: 12pt;
-    }
-
-    h5 {
-      font-size: 11pt;
-    }
-
-    p {
-      margin: 0 0 10px 0;
-    }
-
-    .content {
-      margin: 0;
-      padding: 15px 20px;
-      background-color: #ffffff;
-    }
-
-    .title,
-    .title h1,
-    .title a {
-      color: #492a7c;
-      font-size: 24pt;
-      margin-bottom: 20px;
-      margin-top: 5px;
-    }
-
-    .footer {
-      border-top: 1px solid #ccc;
-      margin-top: 30px;
-      padding-top: 4px;
-      text-align: right;
-      font-size: 12px;
-    }
-
-    .footer a {
-      color: #21346B;
-    }
-
-    .footer a:hover {
-      color: #ce3333;
-    }
-
-    .nested-model div {
-      margin-right:5px;
-      margin-bottom:5px;
-
-      padding-left: 5px;
-      padding-top: 5px;
-
-      border: 1px solid
-    }
-
-    .nested-model p strong {
-      font-variant: all-small-caps;
-    }
-
-    .domain { 
-      background-color: #ffcfa0;
-    }
-
-    .abstraction {
-      background-color:#fffea0
-    }
-
-    .technique {
-      background-color: #cbfecf
-    }
-
-    .algorithm {
-      background-color: #d6d4ff
-    }
-  </style>
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/vis.css">
 </head>
 
 <body>
@@ -195,7 +68,13 @@
 
             <div class="technique">
               <p><strong>Visual Encoding and Interaction Design</strong></p>
+              <p>Methods are encoded as network nodes. Their size is based on the method's LOC or complexity, the color encodes the return type.</p>
+
+              <p>Methods are attracted by their enclosing class and dependencies.</p>
+
+              <p>The dependencies are encoded as the edges.</p>
               <p>
+                <strong>Interactions:</strong>
                 <ul style="list-style: none">
                   <li>Hide / Show artifact</li>
                   <li>Pin / Unpin artifact</li>
@@ -206,7 +85,7 @@
 
               <div class="algorithm">
                 <p><strong>Algorithm Design</strong></p>
-                <p>Voronoi, Hyperbolic Layout, Hierarchical Edge Bundling, Radial Tree</p>
+                <p>Voronoi, Hyperbolic Layout?, Hierarchical Edge Bundling, Radial Layout</p>
               </div>
             </div>
           </div>
@@ -214,17 +93,19 @@
       </div>
 
       <h2>
-        Classes
-      </h2>
-      <p>
-        In this prototype, we explore how classes can be visualized from an initial perspective.
-      </p>
-
-      <h2>
         Methods
       </h2>
       <p>
-        In this prototype, we explore how dependencies between methods can be visualized from an initial method.
+        In this prototype, we explore how dependencies between methods can be visualized from an initial method using radial tree and hierarchical edge bundling.
+      </p>
+      
+      <div id='method-level' class="visualization"></div>
+
+      <h2>
+        Classes
+      </h2>
+      <p>
+        In this prototype, we explore how classes can be visualized from an initial perspective using Voronoi diagrams.
       </p>
 
       <h2>Initial Prompt</h2>
@@ -242,6 +123,10 @@
       <a href="https://courses.cs.washington.edu/courses/cse512/21sp/">CSE 512 Data Visualization</a>
       <a href="http://www.washington.edu">University of Washington</a>
     </div>
+
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="./js/data.js"></script>
+    <script src="./js/visualization.js"></script>
   </div>
 </body>
 
