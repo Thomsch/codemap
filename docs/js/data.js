@@ -1,3 +1,4 @@
+"use strict";
 // Import and preprocessing
 
 let sampleData = ({

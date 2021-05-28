@@ -1,3 +1,5 @@
+"use strict";
+
 // Import data
 let data = sampleData;
 
