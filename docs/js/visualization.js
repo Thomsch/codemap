@@ -19,8 +19,8 @@ console.log({args4jData})
 console.log({data})
 
 // Pick a center node for the visualization which will represent the local context.
-let centerNode = data.nodes[Math.floor(Math.random() * data.nodes.length)];
-console.log(centerNode)
+let centerNodeId = data.nodes[Math.floor(Math.random() * data.nodes.length)];
+console.log(centerNodeId.fqn)
 
 // Visualization configuration
 
@@ -56,7 +56,6 @@ const node = svg
     .classed("node", true)
     .classed("fixed", d => d.fx !== undefined);
 
-
 node
   .on('mouseover', function(e, d) {
     tooltip
@@ -68,6 +67,14 @@ node
     tooltip.text("")
   });
 
+const centerNode = node
+  .filter(function(d) {
+    return d.fqn === centerNodeId.fqn})
+  .classed("fixed", true)
+  .attr("x", 0)
+  .attr("y", 0)
+  .attr("r", 20);
+
 const tooltip = svg.append('text')
 .attr('x', 10)
 .attr('y', height - 10);
@@ -76,6 +83,12 @@ const simulation = d3
   .forceSimulation()
   .nodes(data.nodes)
   .force("center", d3.forceCenter(width / 2, height / 2))
+  .force('collision', d3.forceCollide().radius(function(d) {
+    if(d.fqn === centerNodeId.fqn) {
+      return 20;
+    }
+    return 2;
+  }))
   // .force("cluster", forceCluster())
   // .force("charge", d3.forceManyBody().strength(-1 ))
   // .force("link", d3.forceLink(data.links))
