@@ -7,11 +7,12 @@
 
 .node {
     cursor: move;
-    fill: #ccc;
-    stroke: #000;
+    /* fill: #ccc; */
+    stroke: black;
     stroke-width: 1.5px;
 }
 
 .node.fixed {
-    fill: #f00;
+    /* fill: #f00; */
+    stroke-width: 3px;
 }

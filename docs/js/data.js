@@ -1,5 +1,6 @@
 "use strict";
 // Import and preprocessing
+let args4jData;
 
 let sampleData = ({
     nodes: Array.from({length:13}, () => ({})),
@@ -24,19 +25,12 @@ let sampleData = ({
       { source: 12, target: 10 }
     ]
   })
-
-  main();
-  
-  async function main() {
-      const jsonData = await d3.json("./data/args4j.json");  
-      var data = processJson(jsonData);
-  }
   
   // Transform JSON to flat representations: nodes, links, hierarchy
   function processJson({ classData, classNames }) {
     //   Adapted from earlier prototype: https://github.com/amyjzhu/503-hacking/
   
-      console.log({ classData })
+    //   console.log({ classData })
   
       let classNodes = classData.map(item => ({
           fqn: item.className,
@@ -46,13 +40,15 @@ let sampleData = ({
   
       let methodNodes = classData.flatMap(itemClass => {
           return itemClass.methods.flatMap(itemMethod => ({
-              fqn: itemMethod.signature, //getMethodFqn(itemClass.className, itemMethod.name), 
+              fqn: itemMethod.signature,
+              class: getShortName(itemClass.className),
               name: itemMethod.name,
               type: 'method'
           }));
       });
   
-      let nodes = classNodes.concat(methodNodes)
+      let nodes = methodNodes;
+    //   let nodes = classNodes.concat(methodNodes)
   
       let methodLinks = classData.flatMap(itemClass => {
           return itemClass.methods.flatMap(itemMethod => {
@@ -120,7 +116,7 @@ let sampleData = ({
       console.log({ links })
       console.log({ hierarchy })
   
-      return { nodes: nodes, links: links, hierarchy: hierarchy }
+      return { nodes: nodes, links: links, hierarchy: hierarchy, classNames: classNames }
   }
   
   // Converts a Fully Qualified Name to a short name
