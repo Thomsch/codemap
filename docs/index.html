@@ -30,7 +30,7 @@
       </p>
 
       <p>
-        Previously, we conducted a user study to evaluate if an integrated interactive visualization to an IDE was useful to developers to navigate source code, and find related classes and methods. For this we developed a <a href="https://github.com/amyjzhu/503-hacking/">simple prototype</a> to support the experiment. The visualization used a zooming technique, similar in essence to Google Maps, to move between different levels of abstraction.
+        Previously, we conducted a user study to evaluate if an integrated interactive visualization to an IDE was useful to developers to navigate source code, and find related classes and methods. For this we developed a <a href="https://github.com/amyjzhu/503-hacking/">rough prototype</a> to support the experiment. The visualization used a zooming technique, similar in essence to Google Maps, to move between different levels of abstraction.
       </p>
       
       <p>
@@ -45,11 +45,15 @@
       </p>
 
       <p>
-      We also found that the representation of each level of abstraction was lacking. Participants complained that packages, classes, and method were too far apart or too close together, creating occlusion problems in the latter case. These issues stem from the force layout we used. We also ran into performance and complexity issues with larger code bases that we mitigated with interactive filters and just-in-time rendering.
+        We also found that the representation of each level of abstraction was lacking. Participants complained that packages, classes, and method were too far apart or too close together, creating occlusion problems in the latter case. These issues stem from the force layout we used. We also ran into performance and complexity issues with larger code bases that we mitigated with interactive filters and just-in-time rendering.
       </p>
 
       <p>
-        Thus, with this final project, we aim to explore individual visualization to represent different levels of abstraction in source code. The visualizations will be focused on working from a local perspective (i.e., showing dependencies from a given method rather than showing the entire dependency graph) and interactivity based on existing visualization techniques (e.g., Voronoi, Hyperbolic Layout, Hierarchical Edge Bundling, Radial Tree). This project will not implement the mechanisms to blend the visualization of the levels of abstraction, this will be for another time. Additionally, this project will not focus on the integration between the visualization and the IDE because the basic mechanisms were implemented in the previous prototype. 
+        Thus, with this final project, we aim to explore individual visualization to represent different levels of abstraction in source code capable of addressing these issues. The visualizations will be focused on working from a local perspective (i.e., showing dependencies from a given method rather than showing the entire dependency graph) and interactivity based on existing visualization techniques (e.g., Voronoi, Hyperbolic Layout, Hierarchical Edge Bundling, Radial Tree).
+      </p>
+
+      <p>
+        This project will not implement the mechanisms to blend the visualization of the levels of abstraction, this will be for another time. Additionally, this project will not focus on the integration between the visualization and the IDE because the basic mechanisms were implemented in the previous prototype. 
       </p>
 
       <div class="nested-model">
