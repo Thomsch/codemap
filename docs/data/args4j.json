@@ -1,7 +1,7 @@
 {
   "classData": [
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/CmdLineParser.java",
+      "fileName": "org/kohsuke/args4j/CmdLineParser.java",
       "methods": [
         {
           "synchronized": false,
@@ -864,7 +864,7 @@
       "className": "org.kohsuke.args4j.CmdLineParser"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/CmdLineParser.java",
+      "fileName": "org/kohsuke/args4j/CmdLineParser.java",
       "methods": [
         {
           "synchronized": false,
@@ -972,7 +972,7 @@
       "className": "org.kohsuke.args4j.CmdLineParser.CmdLineImpl"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/FieldParser.java",
+      "fileName": "org/kohsuke/args4j/FieldParser.java",
       "methods": [
         {
           "synchronized": false,
@@ -1019,7 +1019,7 @@
       "className": "org.kohsuke.args4j.FieldParser"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/ParserProperties.java",
+      "fileName": "org/kohsuke/args4j/ParserProperties.java",
       "methods": [
         {
           "synchronized": false,
@@ -1232,7 +1232,7 @@
       "className": "org.kohsuke.args4j.ParserProperties"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/Utilities.java",
+      "fileName": "org/kohsuke/args4j/Utilities.java",
       "methods": [{
         "synchronized": false,
         "static": true,
@@ -1256,7 +1256,7 @@
       "className": "org.kohsuke.args4j.Utilities"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/OptionHandlerRegistry.java",
+      "fileName": "org/kohsuke/args4j/OptionHandlerRegistry.java",
       "methods": [
         {
           "synchronized": true,
@@ -1426,7 +1426,7 @@
       "className": "org.kohsuke.args4j.OptionHandlerRegistry"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/OptionHandlerRegistry.java",
+      "fileName": "org/kohsuke/args4j/OptionHandlerRegistry.java",
       "methods": [{
         "synchronized": false,
         "static": false,
@@ -1451,7 +1451,7 @@
       "className": "org.kohsuke.args4j.OptionHandlerRegistry.OptionHandlerFactory"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/OptionHandlerRegistry.java",
+      "fileName": "org/kohsuke/args4j/OptionHandlerRegistry.java",
       "methods": [{
         "synchronized": false,
         "static": false,
@@ -1476,7 +1476,7 @@
       "className": "org.kohsuke.args4j.OptionHandlerRegistry.DefaultConstructorHandlerFactory"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/OptionDef.java",
+      "fileName": "org/kohsuke/args4j/OptionDef.java",
       "methods": [
         {
           "synchronized": false,
@@ -1635,7 +1635,7 @@
       "className": "org.kohsuke.args4j.OptionDef"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/CmdLineException.java",
+      "fileName": "org/kohsuke/args4j/CmdLineException.java",
       "methods": [
         {
           "synchronized": false,
@@ -1675,7 +1675,7 @@
       "className": "org.kohsuke.args4j.CmdLineException"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/DoubleOptionHandler.java",
+      "fileName": "org/kohsuke/args4j/spi/DoubleOptionHandler.java",
       "methods": [{
         "synchronized": false,
         "static": false,
@@ -1696,7 +1696,7 @@
       "className": "org.kohsuke.args4j.spi.DoubleOptionHandler"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/OneArgumentOptionHandler.java",
+      "fileName": "org/kohsuke/args4j/spi/OneArgumentOptionHandler.java",
       "methods": [
         {
           "synchronized": false,
@@ -1757,7 +1757,7 @@
       "className": "org.kohsuke.args4j.spi.OneArgumentOptionHandler"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/AnnotationImpl.java",
+      "fileName": "org/kohsuke/args4j/spi/AnnotationImpl.java",
       "methods": [
         {
           "synchronized": false,
@@ -1933,7 +1933,7 @@
       "className": "org.kohsuke.args4j.spi.AnnotationImpl"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/MethodSetter.java",
+      "fileName": "org/kohsuke/args4j/spi/MethodSetter.java",
       "methods": [
         {
           "synchronized": false,
@@ -2024,7 +2024,7 @@
       "className": "org.kohsuke.args4j.spi.MethodSetter"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/Getter.java",
+      "fileName": "org/kohsuke/args4j/spi/Getter.java",
       "methods": [{
         "synchronized": false,
         "static": false,
@@ -2045,7 +2045,7 @@
       "className": "org.kohsuke.args4j.spi.Getter"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/ConfigElement.java",
+      "fileName": "org/kohsuke/args4j/spi/ConfigElement.java",
       "methods": [{
         "synchronized": false,
         "static": false,
@@ -2066,7 +2066,7 @@
       "className": "org.kohsuke.args4j.spi.ConfigElement"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/IntOptionHandler.java",
+      "fileName": "org/kohsuke/args4j/spi/IntOptionHandler.java",
       "methods": [{
         "synchronized": false,
         "static": false,
@@ -2087,7 +2087,7 @@
       "className": "org.kohsuke.args4j.spi.IntOptionHandler"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/PathOptionHandler.java",
+      "fileName": "org/kohsuke/args4j/spi/PathOptionHandler.java",
       "methods": [
         {
           "synchronized": false,
@@ -2127,7 +2127,7 @@
       "className": "org.kohsuke.args4j.spi.PathOptionHandler"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/CharOptionHandler.java",
+      "fileName": "org/kohsuke/args4j/spi/CharOptionHandler.java",
       "methods": [{
         "synchronized": false,
         "static": false,
@@ -2148,7 +2148,7 @@
       "className": "org.kohsuke.args4j.spi.CharOptionHandler"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/MacAddressOptionHandler.java",
+      "fileName": "org/kohsuke/args4j/spi/MacAddressOptionHandler.java",
       "methods": [
         {
           "synchronized": false,
@@ -2209,7 +2209,7 @@
       "className": "org.kohsuke.args4j.spi.MacAddressOptionHandler"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/ArrayFieldSetter.java",
+      "fileName": "org/kohsuke/args4j/spi/ArrayFieldSetter.java",
       "methods": [
         {
           "synchronized": false,
@@ -2371,7 +2371,7 @@
       "className": "org.kohsuke.args4j.spi.ArrayFieldSetter"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/UuidOptionHandler.java",
+      "fileName": "org/kohsuke/args4j/spi/UuidOptionHandler.java",
       "methods": [
         {
           "synchronized": false,
@@ -2411,12 +2411,12 @@
       "className": "org.kohsuke.args4j.spi.UuidOptionHandler"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/MultiPathOptionHandler.java",
+      "fileName": "org/kohsuke/args4j/spi/MultiPathOptionHandler.java",
       "methods": [],
       "className": "org.kohsuke.args4j.spi.MultiPathOptionHandler"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/Setter.java",
+      "fileName": "org/kohsuke/args4j/spi/Setter.java",
       "methods": [
         {
           "synchronized": false,
@@ -2507,7 +2507,7 @@
       "className": "org.kohsuke.args4j.spi.Setter"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/FloatOptionHandler.java",
+      "fileName": "org/kohsuke/args4j/spi/FloatOptionHandler.java",
       "methods": [{
         "synchronized": false,
         "static": false,
@@ -2528,7 +2528,7 @@
       "className": "org.kohsuke.args4j.spi.FloatOptionHandler"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/StopOptionHandler.java",
+      "fileName": "org/kohsuke/args4j/spi/StopOptionHandler.java",
       "methods": [
         {
           "synchronized": false,
@@ -2568,7 +2568,7 @@
       "className": "org.kohsuke.args4j.spi.StopOptionHandler"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/FieldSetter.java",
+      "fileName": "org/kohsuke/args4j/spi/FieldSetter.java",
       "methods": [
         {
           "synchronized": false,
@@ -2713,7 +2713,7 @@
       "className": "org.kohsuke.args4j.spi.FieldSetter"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/ByteOptionHandler.java",
+      "fileName": "org/kohsuke/args4j/spi/ByteOptionHandler.java",
       "methods": [{
         "synchronized": false,
         "static": false,
@@ -2734,7 +2734,7 @@
       "className": "org.kohsuke.args4j.spi.ByteOptionHandler"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/OptionHandler.java",
+      "fileName": "org/kohsuke/args4j/spi/OptionHandler.java",
       "methods": [
         {
           "synchronized": false,
@@ -2876,7 +2876,7 @@
       "className": "org.kohsuke.args4j.spi.OptionHandler"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/PatternOptionHandler.java",
+      "fileName": "org/kohsuke/args4j/spi/PatternOptionHandler.java",
       "methods": [
         {
           "synchronized": false,
@@ -2921,7 +2921,7 @@
       "className": "org.kohsuke.args4j.spi.PatternOptionHandler"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/URLOptionHandler.java",
+      "fileName": "org/kohsuke/args4j/spi/URLOptionHandler.java",
       "methods": [
         {
           "synchronized": false,
@@ -2964,12 +2964,12 @@
       "className": "org.kohsuke.args4j.spi.URLOptionHandler"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/ArgumentImpl.java",
+      "fileName": "org/kohsuke/args4j/spi/ArgumentImpl.java",
       "methods": [],
       "className": "org.kohsuke.args4j.spi.ArgumentImpl"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/LongOptionHandler.java",
+      "fileName": "org/kohsuke/args4j/spi/LongOptionHandler.java",
       "methods": [{
         "synchronized": false,
         "static": false,
@@ -2990,7 +2990,7 @@
       "className": "org.kohsuke.args4j.spi.LongOptionHandler"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/MultiValueFieldSetter.java",
+      "fileName": "org/kohsuke/args4j/spi/MultiValueFieldSetter.java",
       "methods": [
         {
           "synchronized": false,
@@ -3118,7 +3118,7 @@
       "className": "org.kohsuke.args4j.spi.MultiValueFieldSetter"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/DelimitedOptionHandler.java",
+      "fileName": "org/kohsuke/args4j/spi/DelimitedOptionHandler.java",
       "methods": [
         {
           "synchronized": false,
@@ -3182,7 +3182,7 @@
       "className": "org.kohsuke.args4j.spi.DelimitedOptionHandler"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/URIOptionHandler.java",
+      "fileName": "org/kohsuke/args4j/spi/URIOptionHandler.java",
       "methods": [
         {
           "synchronized": false,
@@ -3225,7 +3225,7 @@
       "className": "org.kohsuke.args4j.spi.URIOptionHandler"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/BooleanOptionHandler.java",
+      "fileName": "org/kohsuke/args4j/spi/BooleanOptionHandler.java",
       "methods": [
         {
           "synchronized": false,
@@ -3269,7 +3269,7 @@
       "className": "org.kohsuke.args4j.spi.BooleanOptionHandler"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/Setters.java",
+      "fileName": "org/kohsuke/args4j/spi/Setters.java",
       "methods": [
         {
           "synchronized": false,
@@ -3316,12 +3316,12 @@
       "className": "org.kohsuke.args4j.spi.Setters"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/MultiFileOptionHandler.java",
+      "fileName": "org/kohsuke/args4j/spi/MultiFileOptionHandler.java",
       "methods": [],
       "className": "org.kohsuke.args4j.spi.MultiFileOptionHandler"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/RestOfArgumentsHandler.java",
+      "fileName": "org/kohsuke/args4j/spi/RestOfArgumentsHandler.java",
       "methods": [
         {
           "synchronized": false,
@@ -3365,7 +3365,7 @@
       "className": "org.kohsuke.args4j.spi.RestOfArgumentsHandler"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/SubCommandHandler.java",
+      "fileName": "org/kohsuke/args4j/spi/SubCommandHandler.java",
       "methods": [
         {
           "synchronized": false,
@@ -3542,7 +3542,7 @@
       "className": "org.kohsuke.args4j.spi.SubCommandHandler"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/StringOptionHandler.java",
+      "fileName": "org/kohsuke/args4j/spi/StringOptionHandler.java",
       "methods": [
         {
           "synchronized": false,
@@ -3585,7 +3585,7 @@
       "className": "org.kohsuke.args4j.spi.StringOptionHandler"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/StringArrayOptionHandler.java",
+      "fileName": "org/kohsuke/args4j/spi/StringArrayOptionHandler.java",
       "methods": [
         {
           "synchronized": false,
@@ -3629,7 +3629,7 @@
       "className": "org.kohsuke.args4j.spi.StringArrayOptionHandler"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/MapOptionHandler.java",
+      "fileName": "org/kohsuke/args4j/spi/MapOptionHandler.java",
       "methods": [
         {
           "synchronized": false,
@@ -3735,7 +3735,7 @@
       "className": "org.kohsuke.args4j.spi.MapOptionHandler"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/Parameters.java",
+      "fileName": "org/kohsuke/args4j/spi/Parameters.java",
       "methods": [
         {
           "synchronized": false,
@@ -3775,7 +3775,7 @@
       "className": "org.kohsuke.args4j.spi.Parameters"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/FileOptionHandler.java",
+      "fileName": "org/kohsuke/args4j/spi/FileOptionHandler.java",
       "methods": [
         {
           "synchronized": false,
@@ -3815,7 +3815,7 @@
       "className": "org.kohsuke.args4j.spi.FileOptionHandler"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/ExplicitBooleanOptionHandler.java",
+      "fileName": "org/kohsuke/args4j/spi/ExplicitBooleanOptionHandler.java",
       "methods": [
         {
           "synchronized": false,
@@ -3877,7 +3877,7 @@
       "className": "org.kohsuke.args4j.spi.ExplicitBooleanOptionHandler"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/InetAddressOptionHandler.java",
+      "fileName": "org/kohsuke/args4j/spi/InetAddressOptionHandler.java",
       "methods": [
         {
           "synchronized": false,
@@ -3917,7 +3917,7 @@
       "className": "org.kohsuke.args4j.spi.InetAddressOptionHandler"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/ShortOptionHandler.java",
+      "fileName": "org/kohsuke/args4j/spi/ShortOptionHandler.java",
       "methods": [{
         "synchronized": false,
         "static": false,
@@ -3938,7 +3938,7 @@
       "className": "org.kohsuke.args4j.spi.ShortOptionHandler"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/EnumOptionHandler.java",
+      "fileName": "org/kohsuke/args4j/spi/EnumOptionHandler.java",
       "methods": [
         {
           "synchronized": false,
@@ -4000,7 +4000,7 @@
       "className": "org.kohsuke.args4j.spi.EnumOptionHandler"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/spi/OptionImpl.java",
+      "fileName": "org/kohsuke/args4j/spi/OptionImpl.java",
       "methods": [
         {
           "synchronized": false,
@@ -4057,7 +4057,7 @@
       "className": "org.kohsuke.args4j.spi.OptionImpl"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/Starter.java",
+      "fileName": "org/kohsuke/args4j/Starter.java",
       "methods": [
         {
           "synchronized": false,
@@ -4104,7 +4104,7 @@
       "className": "org.kohsuke.args4j.Starter"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/Localizable.java",
+      "fileName": "org/kohsuke/args4j/Localizable.java",
       "methods": [
         {
           "synchronized": false,
@@ -4147,7 +4147,7 @@
       "className": "org.kohsuke.args4j.Localizable"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/NamedOptionDef.java",
+      "fileName": "org/kohsuke/args4j/NamedOptionDef.java",
       "methods": [
         {
           "synchronized": false,
@@ -4272,7 +4272,7 @@
       "className": "org.kohsuke.args4j.NamedOptionDef"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/Config.java",
+      "fileName": "org/kohsuke/args4j/Config.java",
       "methods": [
         {
           "synchronized": false,
@@ -4317,7 +4317,7 @@
       "className": "org.kohsuke.args4j.Config"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/Config.java",
+      "fileName": "org/kohsuke/args4j/Config.java",
       "methods": [{
         "synchronized": false,
         "static": false,
@@ -4343,7 +4343,7 @@
       "className": "org.kohsuke.args4j.Config.ConfigHandler"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/OptionHandlerFilter.java",
+      "fileName": "org/kohsuke/args4j/OptionHandlerFilter.java",
       "methods": [
         {
           "synchronized": false,
@@ -4417,12 +4417,12 @@
       "className": "org.kohsuke.args4j.OptionHandlerFilter"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/IllegalAnnotationError.java",
+      "fileName": "org/kohsuke/args4j/IllegalAnnotationError.java",
       "methods": [],
       "className": "org.kohsuke.args4j.IllegalAnnotationError"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/ClassParser.java",
+      "fileName": "org/kohsuke/args4j/ClassParser.java",
       "methods": [{
         "synchronized": false,
         "static": false,
@@ -4450,7 +4450,7 @@
       "className": "org.kohsuke.args4j.ClassParser"
     },
     {
-      "fileName": "/Users/thomas/Projects/args4j/args4j/src/org/kohsuke/args4j/XmlParser.java",
+      "fileName": "org/kohsuke/args4j/XmlParser.java",
       "methods": [
         {
           "synchronized": false,
