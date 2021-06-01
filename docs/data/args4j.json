@@ -34,8 +34,7 @@
           "calls": [
             {"signature": "org.kohsuke.args4j.Utilities.checkNonNull(java.lang.Object, java.lang.String)"},
             {"signature": "org.kohsuke.args4j.CmdLineParser.createOptionHandler(org.kohsuke.args4j.OptionDef, org.kohsuke.args4j.spi.Setter)"},
-            {"signature": "org.kohsuke.args4j.spi.Setter.isMultiValued()"},
-            {"signature": "org.kohsuke.args4j.Messages.format(java.lang.Object...)"}
+            {"signature": "org.kohsuke.args4j.spi.Setter.isMultiValued()"}
           ],
           "final": false,
           "name": "addArgument",
@@ -116,8 +115,7 @@
           "native": false,
           "calls": [
             {"signature": "org.kohsuke.args4j.Utilities.checkNonNull(java.lang.Object, java.lang.String)"},
-            {"signature": "org.kohsuke.args4j.CmdLineParser.findOptionByName(java.lang.String)"},
-            {"signature": "org.kohsuke.args4j.Messages.format(java.lang.Object...)"}
+            {"signature": "org.kohsuke.args4j.CmdLineParser.findOptionByName(java.lang.String)"}
           ],
           "final": false,
           "name": "checkOptionNotInMap",
@@ -333,8 +331,7 @@
           "calls": [
             {"signature": "org.kohsuke.args4j.ParserProperties.getShowDefaults()"},
             {"signature": "org.kohsuke.args4j.OptionDef.required()"},
-            {"signature": "org.kohsuke.args4j.spi.OptionHandler.printDefaultValue()"},
-            {"signature": "org.kohsuke.args4j.Messages.format(java.lang.Object...)"}
+            {"signature": "org.kohsuke.args4j.spi.OptionHandler.printDefaultValue()"}
           ],
           "final": false,
           "name": "createDefaultValuePart",
@@ -1303,7 +1300,7 @@
           "typeParameters": [],
           "default": false,
           "native": false,
-          "calls": [{"signature": "org.kohsuke.args4j.Messages.format(java.lang.Object...)"}],
+          "calls": [],
           "final": false,
           "name": "getConstructor",
           "parameters": ["java.lang.Class<? extends org.kohsuke.args4j.spi.OptionHandler>"],
@@ -1321,8 +1318,7 @@
           "default": false,
           "native": false,
           "calls": [
-            {"signature": "org.kohsuke.args4j.Utilities.checkNonNull(java.lang.Object, java.lang.String)"},
-            {"signature": "org.kohsuke.args4j.Messages.format(java.lang.Object...)"}
+            {"signature": "org.kohsuke.args4j.Utilities.checkNonNull(java.lang.Object, java.lang.String)"}
           ],
           "final": false,
           "name": "registerHandler",
@@ -1367,7 +1363,6 @@
             {"signature": "org.kohsuke.args4j.Utilities.checkNonNull(java.lang.Object, java.lang.String)"},
             {"signature": "org.kohsuke.args4j.OptionDef.handler()"},
             {"signature": "org.kohsuke.args4j.spi.Setter.getType()"},
-            {"signature": "org.kohsuke.args4j.Messages.format(java.lang.Object...)"},
             {"signature": "org.kohsuke.args4j.OptionHandlerRegistry.OptionHandlerFactory.getHandler(org.kohsuke.args4j.CmdLineParser, org.kohsuke.args4j.OptionDef, org.kohsuke.args4j.spi.Setter)"},
             {"signature": "org.kohsuke.args4j.OptionHandlerRegistry.DefaultConstructorHandlerFactory.getHandler(org.kohsuke.args4j.CmdLineParser, org.kohsuke.args4j.OptionDef, org.kohsuke.args4j.spi.Setter)"}
           ],
@@ -2117,7 +2112,7 @@
           "typeParameters": [],
           "default": false,
           "native": false,
-          "calls": [{"signature": "org.kohsuke.args4j.spi.Messages.format(java.lang.Object...)"}],
+          "calls": [],
           "final": false,
           "name": "getDefaultMetaVariable",
           "parameters": [],
@@ -2182,7 +2177,7 @@
           "typeParameters": [],
           "default": false,
           "native": false,
-          "calls": [{"signature": "org.kohsuke.args4j.spi.Messages.format(java.lang.Object...)"}],
+          "calls": [],
           "final": false,
           "name": "getDefaultMetaVariable",
           "parameters": [],
@@ -2401,7 +2396,7 @@
           "typeParameters": [],
           "default": false,
           "native": false,
-          "calls": [{"signature": "org.kohsuke.args4j.spi.Messages.format(java.lang.Object...)"}],
+          "calls": [],
           "final": false,
           "name": "getDefaultMetaVariable",
           "parameters": [],
@@ -2558,7 +2553,7 @@
           "typeParameters": [],
           "default": false,
           "native": false,
-          "calls": [{"signature": "org.kohsuke.args4j.spi.Messages.format(java.lang.Object...)"}],
+          "calls": [],
           "final": false,
           "name": "getDefaultMetaVariable",
           "parameters": [],
@@ -2891,7 +2886,6 @@
           "native": false,
           "calls": [
             {"signature": "org.kohsuke.args4j.spi.Parameters.getParameter(int)"},
-            {"signature": "org.kohsuke.args4j.spi.Messages.format(java.lang.Object...)"},
             {"signature": "org.kohsuke.args4j.OptionDef.toString()"},
             {"signature": "org.kohsuke.args4j.spi.Setter.addValue(T)"}
           ],
@@ -2911,7 +2905,7 @@
           "typeParameters": [],
           "default": false,
           "native": false,
-          "calls": [{"signature": "org.kohsuke.args4j.spi.Messages.format(java.lang.Object...)"}],
+          "calls": [],
           "final": false,
           "name": "getDefaultMetaVariable",
           "parameters": [],
@@ -2954,7 +2948,7 @@
           "typeParameters": [],
           "default": false,
           "native": false,
-          "calls": [{"signature": "org.kohsuke.args4j.spi.Messages.format(java.lang.Object...)"}],
+          "calls": [],
           "final": false,
           "name": "getDefaultMetaVariable",
           "parameters": [],
@@ -3088,7 +3082,7 @@
           "typeParameters": [],
           "default": false,
           "native": false,
-          "calls": [{"signature": "org.kohsuke.args4j.spi.Messages.format(java.lang.Object...)"}],
+          "calls": [],
           "final": false,
           "name": "doAddValue",
           "parameters": [
@@ -3215,7 +3209,7 @@
           "typeParameters": [],
           "default": false,
           "native": false,
-          "calls": [{"signature": "org.kohsuke.args4j.spi.Messages.format(java.lang.Object...)"}],
+          "calls": [],
           "final": false,
           "name": "getDefaultMetaVariable",
           "parameters": [],
@@ -3355,7 +3349,7 @@
           "typeParameters": [],
           "default": false,
           "native": false,
-          "calls": [{"signature": "org.kohsuke.args4j.spi.Messages.format(java.lang.Object...)"}],
+          "calls": [],
           "final": false,
           "name": "getDefaultMetaVariable",
           "parameters": [],
@@ -3575,7 +3569,7 @@
           "typeParameters": [],
           "default": false,
           "native": false,
-          "calls": [{"signature": "org.kohsuke.args4j.spi.Messages.format(java.lang.Object...)"}],
+          "calls": [],
           "final": false,
           "name": "getDefaultMetaVariable",
           "parameters": [],
@@ -3598,7 +3592,7 @@
           "typeParameters": [],
           "default": false,
           "native": false,
-          "calls": [{"signature": "org.kohsuke.args4j.spi.Messages.format(java.lang.Object...)"}],
+          "calls": [],
           "final": false,
           "name": "getDefaultMetaVariable",
           "parameters": [],
@@ -3805,7 +3799,7 @@
           "typeParameters": [],
           "default": false,
           "native": false,
-          "calls": [{"signature": "org.kohsuke.args4j.spi.Messages.format(java.lang.Object...)"}],
+          "calls": [],
           "final": false,
           "name": "getDefaultMetaVariable",
           "parameters": [],
@@ -3867,7 +3861,7 @@
           "typeParameters": [],
           "default": false,
           "native": false,
-          "calls": [{"signature": "org.kohsuke.args4j.spi.Messages.format(java.lang.Object...)"}],
+          "calls": [],
           "final": false,
           "name": "getDefaultMetaVariable",
           "parameters": [],
@@ -3907,7 +3901,7 @@
           "typeParameters": [],
           "default": false,
           "native": false,
-          "calls": [{"signature": "org.kohsuke.args4j.spi.Messages.format(java.lang.Object...)"}],
+          "calls": [],
           "final": false,
           "name": "getDefaultMetaVariable",
           "parameters": [],
@@ -4489,8 +4483,7 @@
             {"signature": "org.kohsuke.args4j.CmdLineParser.addOption(org.kohsuke.args4j.spi.Setter, org.kohsuke.args4j.Option)"},
             {"signature": "org.kohsuke.args4j.spi.Setters.create(org.kohsuke.args4j.CmdLineParser, java.lang.reflect.AccessibleObject, java.lang.Object)"},
             {"signature": "org.kohsuke.args4j.XmlParser.findMethodOrField(java.lang.Object, java.lang.String, java.lang.String)"},
-            {"signature": "org.kohsuke.args4j.CmdLineParser.addArgument(org.kohsuke.args4j.spi.Setter, org.kohsuke.args4j.Argument)"},
-            {"signature": "org.kohsuke.args4j.Messages.format(java.lang.Object...)"}
+            {"signature": "org.kohsuke.args4j.CmdLineParser.addArgument(org.kohsuke.args4j.spi.Setter, org.kohsuke.args4j.Argument)"}
           ],
           "final": false,
           "name": "parse",
