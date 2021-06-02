@@ -32,7 +32,7 @@ async function main() {
     .append("svg")
     .attr("width", container.clientWidth)
     .attr("height", container.clientHeight)
-    .attr("viewBox", [0, 0, width, height]);
+    .attr("viewBox", [-width/2, -height/2, width, height]);
 
   const link = svg
     .selectAll(".link")
@@ -66,7 +66,7 @@ async function main() {
     .nodes(data.nodes)
     // .force("charge", d3.forceManyBody())
     .force("charge", d3.forceManyBody().strength((d,i) => i === centerNodeIndex ? -500 : -10))
-    .force("center", d3.forceCenter(width / 2, height / 2))
+    // .force("center", d3.forceCenter(width / 2, height / 2))
     .force("link", d3.forceLink(data.links))
     .on("tick", tick);
 
