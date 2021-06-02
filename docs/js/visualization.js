@@ -1,16 +1,8 @@
 "use strict";
 
-
-var container = document.getElementById("method-level");
-console.log(`Parent dimensions (WxH) are ${container.clientWidth}x${container.clientHeight}px`)
-
-main();
-
-async function main() {
-  const jsonData = await d3.json("./data/args4j.json");  
-  let classes = jsonData.classNames
-  let data = processMethodData(jsonData);
-  // let data = sampleData;
+function visualizeMethods(data, classes) {
+  var container = document.getElementById("method-level");
+  console.log(`Parent dimensions (WxH) are ${container.clientWidth}x${container.clientHeight}px`)
 
   console.log({data})
 
