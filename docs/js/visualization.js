@@ -112,7 +112,7 @@ async function main() {
   function dragged(event, d) {
     d.fx = clamp(event.x, 0, width);
     d.fy = clamp(event.y, 0, height);
-    simulation.alpha(1).restart();
+    // simulation.alpha(1).restart();
   }
 
   function clamp(x, lo, hi) {
