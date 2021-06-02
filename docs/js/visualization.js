@@ -23,7 +23,6 @@ async function main() {
   var width = 2000;
   var height = 2000; 
 
-
   var color = d3.scaleOrdinal()
     .domain(classes)
     .range(d3.schemeSet3);
@@ -47,15 +46,18 @@ async function main() {
     .attr("r", 6)
     .attr("fill", d => color(d.class))
     .classed("node", true)
+    .classed("center", d => d.id === centerNodeId.id)
     .classed("fixed", d => d.fx !== undefined);
 
-    const centerNode = node
-    .filter(function(d) {
-      return d.id === centerNodeId.id})
-    .classed("fixed", true)
-    .attr("x", 0)
-    .attr("y", 0)
-    .attr("r", 20);
+    const centerNode = svg.select(".center")
+      .classed("fixed", true)
+      .attr("cx", 0)
+      .attr("cy", 0)
+      .attr("fx", 0)
+      .attr("x", 0)
+      .attr("y", 0)
+      .attr("fy", 0)
+      .attr("r", 20);
 
   const tooltip = svg.append('text')
   .attr('x', 10)
