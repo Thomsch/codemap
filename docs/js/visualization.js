@@ -49,7 +49,7 @@ async function main() {
     .classed("node", true)
     .classed("fixed", d => d.fx !== undefined);
 
-  const centerNode = node
+    const centerNode = node
     .filter(function(d) {
       return d.id === centerNodeId.id})
     .classed("fixed", true)
@@ -64,8 +64,8 @@ async function main() {
   const simulation = d3
     .forceSimulation()
     .nodes(data.nodes)
-    .force("charge", d3.forceManyBody())
-    // .force("charge", d3.forceManyBody().strength((d,i) => i === centerNodeIndex ? -500 : -10))
+    // .force("charge", d3.forceManyBody())
+    .force("charge", d3.forceManyBody().strength((d,i) => i === centerNodeIndex ? -500 : -10))
     .force("center", d3.forceCenter(width / 2, height / 2))
     .force("link", d3.forceLink(data.links))
     .on("tick", tick);
@@ -86,7 +86,6 @@ async function main() {
   node.call(drag).on("click", click);
 
   function tick() {
-    
     link
       .attr("x1", d => d.source.x)
       .attr("y1", d => d.source.y)
