@@ -1,5 +1,21 @@
 "use strict";
 
+function visualizeHierachy(hierarchy) {
+  const containerId = "vis-hierachy"
+  const container = document.getElementById(containerId);
+
+  const margin = {top: 10, right: 10, bottom: 10, left: 10};
+  const width = 445 - margin.left - margin.right;
+  const height = 445 - margin.top - margin.bottom;
+
+  let root = d3.stratify()
+    .id(function(d) { return d.name; })
+    .parentId(function(d) { return d.parent; })
+    (hierarchy);
+
+  const svg = d3.select(`#${containerId}`).append("svg");
+}
+
 function visualizeMethods(data, classes) {
   var container = document.getElementById("method-level");
   console.log(`Parent dimensions (WxH) are ${container.clientWidth}x${container.clientHeight}px`)

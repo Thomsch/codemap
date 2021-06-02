@@ -26,6 +26,42 @@ let sampleData = ({
     ]
 })
 
+function processHierarchy(json){
+
+    const classNames = json.classNames
+
+    let hierarchy = classNames.map(fqnClassName => {
+        let parent = getPackage(fqnClassName);
+        
+        // Remove parents that are classes until we find a package.
+        while (isClass(parent)) {
+            parent = getPackage(parent)
+        }
+        
+        console.log(fqnClassName)
+        console.log(parent)
+
+        let ret = {
+            name: fqnClassName,
+            parent: parent
+        }
+
+        return ret
+    });
+
+    hierarchy.push({
+        name: "org.kohsuke.args4j",
+        parent: ""
+    })    
+    
+    hierarchy.push({
+        name: "org.kohsuke.args4j.spi",
+        parent: "org.kohsuke.args4j"
+    })
+    
+  return hierarchy
+}
+
 function processMethodData(json) {
     const classData = json.classData
 
@@ -53,7 +89,6 @@ function processMethodData(json) {
 
 // Transform JSON to flat representations: nodes, links, hierarchy
 function processJson({ classData, classNames }) {
-//   Adapted from earlier prototype: https://github.com/amyjzhu/503-hacking/
 
 //   console.log({ classData })
 
@@ -142,7 +177,6 @@ function processJson({ classData, classNames }) {
     console.log({ hierarchy })
 
 //   return { nodes: nodes, links: links, hierarchy: hierarchy, classNames: classNames }
-    return { nodes: nodes, links: links}
 }
 
 // Converts a Fully Qualified Name to a short name
@@ -168,3 +202,5 @@ function isClass(classFqn) {
     return maybeAClass.charCodeAt(0) >= 65 && maybeAClass.charCodeAt(0) <= 90
     // Alternate implementation: look if the candidate is an element of data.classNames. Set operations are O(1).
 }
+
+// Adapted from earlier prototype: https://github.com/amyjzhu/503-hacking/
