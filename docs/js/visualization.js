@@ -15,11 +15,8 @@ async function main() {
   console.log({data})
 
   // Pick a center node for the visualization which will represent the local context.
-  let centerNodeId = data.nodes[Math.floor(Math.random() * data.nodes.length)];
-  console.log(centerNodeId.id)
-
-  // Visualization configuration
-
+  let centerNodeIndex = Math.floor(Math.random() * data.nodes.length)
+  let centerNodeId = data.nodes[centerNodeIndex];
 
   var width = container.clientWidth;
   var height = container.clientHeight; 
@@ -67,14 +64,9 @@ async function main() {
   const simulation = d3
     .forceSimulation()
     .nodes(data.nodes)
-    .force("charge", d3.forceManyBody(20))
+    .force("charge", d3.forceManyBody())
+    // .force("charge", d3.forceManyBody().strength((d,i) => i === centerNodeIndex ? -500 : -10))
     .force("center", d3.forceCenter(width / 2, height / 2))
-    // .force('collision', d3.forceCollide().radius(function(d) {
-    //   if(d.id === centerNodeId.id) {
-    //     return 20;
-    //   }
-    //   return 2;
-    // }))
     .force("link", d3.forceLink(data.links))
     .on("tick", tick);
 
@@ -126,8 +118,6 @@ async function main() {
   function clamp(x, lo, hi) {
     return x < lo ? lo : x > hi ? hi : x;
   }
-
-
 }
 
 // Template code from https://observablehq.com/@d3/sticky-force-layout?collection=@d3/d3-force
