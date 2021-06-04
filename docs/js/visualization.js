@@ -68,8 +68,7 @@ function visualizeMethods(container, data, classes) {
     .on("tick", tick);
 
     node.on('mouseover', function(e, d) {
-      tooltip
-        .text(d.name)
+      tooltip.text(d.name)
     })
     .on('mouseout', function() {
       tooltip.text("")
@@ -116,4 +115,5 @@ function visualizeMethods(container, data, classes) {
   }
 }
 
-// Template code from https://observablehq.com/@d3/sticky-force-layout?collection=@d3/d3-force
+// References
+// https://observablehq.com/@d3/sticky-force-layout?collection=@d3/d3-force
