@@ -6,10 +6,17 @@
 }
 
 .node {
-    cursor: move;
     /* fill: #ccc; */
     stroke: black;
     stroke-width: 1.5px;
+}
+
+.node:hover {
+    cursor: grab;
+}
+
+.node.center:hover {
+    cursor: default;
 }
 
 .node.fixed {
