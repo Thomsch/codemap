@@ -19,7 +19,7 @@ function visualizeMethods(container, data, classes) {
   const height = container.node().clientHeight;
 
   let centerNodeIndex = Math.floor(Math.random() * data.nodes.length)
-  let centerNodeId = data.nodes[centerNodeIndex];
+  let centerNode = data.nodes[centerNodeIndex];
 
   var color = d3.scaleOrdinal()
     .domain(classes)
@@ -44,10 +44,10 @@ function visualizeMethods(container, data, classes) {
     .attr("r", 6)
     .attr("fill", d => color(d.class))
     .classed("node", true)
-    .classed("center", d => d.id === centerNodeId.id)
+    .classed("center", d => d.id === centerNode.id)
     .classed("fixed", d => d.fx !== undefined);
 
-    const centerNode = svg.select(".center")
+  const centerNodeSelection = svg.select(".center")
       .classed("fixed", true)
       .attr("cx", 0)
       .attr("cy", 0)
