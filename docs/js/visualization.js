@@ -61,9 +61,8 @@ function visualizeMethods(container, data, classes) {
   const simulation = d3
     .forceSimulation()
     .nodes(data.nodes)
-    // .force("charge", d3.forceManyBody())
+    .force("charge", d3.forceManyBody().strength((d,i) => i === centerNodeIndex ? -300 : -30))
     .force("center", d3.forceCenter(centerX, centerY))
-    // .force("center", d3.forceCenter(width / 2, height / 2))
     .force("link", d3.forceLink(data.links))
     .on("tick", tick);
 
@@ -79,7 +78,7 @@ function visualizeMethods(container, data, classes) {
     .on("start", dragstart)
     .on("drag", dragged);
 
-  node.call(drag).on("click", click);
+  node.filter(d => d.id != centerNode.id).call(drag).on("click", click);
 
   function tick() {
     link
