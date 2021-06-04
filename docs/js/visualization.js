@@ -22,6 +22,8 @@ function visualizeMethods(container, data, classes) {
 
   let centerNodeIndex = Math.floor(Math.random() * data.nodes.length)
   let centerNode = data.nodes[centerNodeIndex];
+  centerNode.fx = centerX;
+  centerNode.fy = centerY;
 
   var color = d3.scaleOrdinal()
     .domain(classes)
@@ -49,14 +51,8 @@ function visualizeMethods(container, data, classes) {
     .classed("fixed", d => d.fx !== undefined);
 
   const centerNodeSelection = svg.select(".center")
-      .classed("fixed", true)
-      .attr("cx", 0)
-      .attr("cy", 0)
-      .attr("fx", 0)
-      .attr("x", 0)
-      .attr("y", 0)
-      .attr("fy", 0)
-      .attr("r", 20);
+    .classed("fixed", true)
+    .attr("r", 20);
 
   const tooltip = svg.append('text')
   .attr('x', 10)
