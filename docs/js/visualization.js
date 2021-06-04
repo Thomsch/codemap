@@ -17,6 +17,8 @@ function visualizeHierachy(container, hierarchy) {
 function visualizeMethods(container, data, classes) {
   const width = container.node().clientWidth;
   const height = container.node().clientHeight;
+  const centerX = width / 2;
+  const centerY = height / 2;
 
   let centerNodeIndex = Math.floor(Math.random() * data.nodes.length)
   let centerNode = data.nodes[centerNodeIndex];
@@ -27,9 +29,8 @@ function visualizeMethods(container, data, classes) {
 
   const svg = container
     .append("svg")
-    .attr("width", container.clientWidth)
-    .attr("height", container.clientHeight)
-    .attr("viewBox", [-width/2, -height/2, width, height]);
+    .attr("width", width)
+    .attr("height", height);
 
   const link = svg
     .selectAll(".link")
@@ -65,7 +66,7 @@ function visualizeMethods(container, data, classes) {
     .forceSimulation()
     .nodes(data.nodes)
     // .force("charge", d3.forceManyBody())
-    .force("charge", d3.forceManyBody().strength((d,i) => i === centerNodeIndex ? -500 : -10))
+    .force("center", d3.forceCenter(centerX, centerY))
     // .force("center", d3.forceCenter(width / 2, height / 2))
     .force("link", d3.forceLink(data.links))
     .on("tick", tick);
