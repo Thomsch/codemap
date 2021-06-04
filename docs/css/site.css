@@ -125,11 +125,7 @@ li {
 }
 
 .visualization {
-    border: 1px solid red;
+    border: 1px solid;
     width: auto;
-    height: 600px;
-}
-
-.visualization svg {
-    border: 1px solid
+    height: 500px;
 }
