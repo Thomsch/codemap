@@ -1,12 +1,10 @@
 "use strict";
 
-function visualizeHierachy(hierarchy) {
-  const containerId = "vis-hierachy"
-  const container = document.getElementById(containerId);
-
-  const margin = {top: 10, right: 10, bottom: 10, left: 10};
-  const width = 445 - margin.left - margin.right;
-  const height = 445 - margin.top - margin.bottom;
+function visualizeHierachy(container, hierarchy) {
+  const width = container.node().clientWidth;
+  const height = container.node().clientHeight;
+  const centerX = width / 2;
+  const centerY = height / 2;
 
   let root = d3.stratify()
     .id(function(d) { return d.name; })
@@ -16,26 +14,18 @@ function visualizeHierachy(hierarchy) {
   const svg = d3.select(`#${containerId}`).append("svg");
 }
 
-function visualizeMethods(data, classes) {
-  var container = document.getElementById("method-level");
-  console.log(`Parent dimensions (WxH) are ${container.clientWidth}x${container.clientHeight}px`)
+function visualizeMethods(container, data, classes) {
+  const width = container.node().clientWidth;
+  const height = container.node().clientHeight;
 
-  console.log({data})
-
-  // Pick a center node for the visualization which will represent the local context.
   let centerNodeIndex = Math.floor(Math.random() * data.nodes.length)
   let centerNodeId = data.nodes[centerNodeIndex];
-
-  var width = container.clientWidth;
-  var height = container.clientHeight; 
-  var width = 2000;
-  var height = 2000; 
 
   var color = d3.scaleOrdinal()
     .domain(classes)
     .range(d3.schemeSet3);
 
-  const svg = d3.select("#method-level")
+  const svg = container
     .append("svg")
     .attr("width", container.clientWidth)
     .attr("height", container.clientHeight)
