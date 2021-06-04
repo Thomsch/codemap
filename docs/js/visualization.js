@@ -104,13 +104,9 @@ function visualizeMethods(container, data, classes) {
   }
 
   function dragged(event, d) {
-    d.fx = clamp(event.x, 0, width);
-    d.fy = clamp(event.y, 0, height);
-    // simulation.alpha(1).restart();
-  }
-
-  function clamp(x, lo, hi) {
-    return x < lo ? lo : x > hi ? hi : x;
+    d.fx = event.x;
+    d.fy = event.y;
+    simulation.alpha(1).restart();
   }
 }
 
