@@ -107,10 +107,50 @@
       
       <div id='method-level' class="visualization"></div>
 
-      <h3>Classes</h3>      
+      <h3>Level: macro</h3>
       <p>
         In this prototype, we explore how the class and package hierarchy can be visualized from an initial perspective using Voronoi diagrams. For example using <a href="https://github.com/Kcnarf/d3-voronoi-treemap">d3-voronoi-treemap</a>.
       </p>
+
+      <div class="nested-model">
+        <div class="domain">
+          <p><strong>Domain Problem and Data Characterization</strong></p>
+          <p>
+            
+          </p>
+          <p>
+            Conducted a user study on a rough visualization prototype integrated to Visual Studio Code as a plugin to gather initial feedback. Participants noted that integration was really important and made heavy use of click through to go from one method to another. Also found the zooming feature useful to answer questions.
+          </p>
+
+          <div class="abstraction">
+            <p><strong>Operation and Data Type Abstraction</strong></p>
+            <p>Network graph. Edges are links between artifacts. Nodes are methods.</p>
+
+            <div class="technique">
+              <p><strong>Visual Encoding and Interaction Design</strong></p>
+              <p>Methods are encoded as network nodes. Their size is based on the method's LOC or complexity, the color encodes the return type.</p>
+
+              <p>Methods are attracted by their enclosing class and dependencies.</p>
+
+              <p>The dependencies are encoded as the edges.</p>
+              <p>
+                <strong>Interactions:</strong>
+                <ul style="list-style: none">
+                  <li>Hide / Show artifact</li>
+                  <li>Pin / Unpin artifact</li>
+                  <li>Navigate: click on links, zoom, pan</li>
+                  <li>Drill down / Up artifact: class > method > logic?</li>
+                </ul>
+              </p>
+
+              <div class="algorithm">
+                <p><strong>Algorithm Design</strong></p>
+                <p>Hierarchical Voronoi</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- <div id='vis-hierachy' class="visualization"></div> -->
 
@@ -147,6 +187,26 @@
         <a href='https://courses.cs.washington.edu/courses/cse512/21sp/fp.html'>course website</a>.
       </p>
 
+    </section>
+
+    <section>
+      <h2>References</h2>
+
+      <ol>
+        <li>
+          <p>Kcnarf. "D3 Voronoi Treemap." <a href="https://github.com/Kcnarf/d3-voronoi-treemap">https://github.com/Kcnarf/d3-voronoi-treemap</a>. Last accessed 2021-06-06</p>
+        </li>
+        <li>
+          <p>Balzer, Michael, and Oliver Deussen. "Voronoi treemaps." IEEE Symposium on Information Visualization, 2005. INFOVIS 2005.. IEEE, 2005.</p>
+        </li>
+        <li>
+          <p>Balzer, Michael, Oliver Deussen, and Claus Lewerentz. "Voronoi treemaps for the visualization of software metrics." Proceedings of the 2005 ACM symposium on Software visualization. 2005.</p>
+        </li>
+        <li>
+          <p>Munzner, Tamara. "A nested model for visualization design and validation." IEEE transactions on visualization and computer graphics 15.6 (2009): 921-928.</p>
+        </li>
+      </ol>
+      
     </section>
 
     <div class="footer">
