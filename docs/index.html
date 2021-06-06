@@ -116,36 +116,34 @@
         <div class="domain">
           <p><strong>Domain Problem and Data Characterization</strong></p>
           <p>
-            
+            We are interested to help the developer build a mental image of the source code. Mental image of the source code is necessary before fixing a bug or implementing a new feature to locate artifacts or interest.
           </p>
           <p>
-            Conducted a user study on a rough visualization prototype integrated to Visual Studio Code as a plugin to gather initial feedback. Participants noted that integration was really important and made heavy use of click through to go from one method to another. Also found the zooming feature useful to answer questions.
+            Conducted a user study on a rough visualization prototype integrated to Visual Studio Code as a plugin to gather initial feedback. Participants noted that integration was really important and used the zooming mechanism to move from low abstraction to high abstraction.
           </p>
 
           <div class="abstraction">
             <p><strong>Operation and Data Type Abstraction</strong></p>
-            <p>Network graph. Edges are links between artifacts. Nodes are methods.</p>
+            <p>Transform the class and package hierarchy into a list of parent and children relations. The hierarchy is illustrated with Voronoi treemaps [<a href="#ref-balzer-voronoi-treemap">2</a>];</p>
 
             <div class="technique">
               <p><strong>Visual Encoding and Interaction Design</strong></p>
-              <p>Methods are encoded as network nodes. Their size is based on the method's LOC or complexity, the color encodes the return type.</p>
+              
+              <p>The Voronoi treemap is monochromatic. The cells represent classes and the edges represent class and packages boundaries.</p>
+              
+              <p>The current class is encoded with an accent color for pre-attentive detection.</p>
 
-              <p>Methods are attracted by their enclosing class and dependencies.</p>
+              <p>To anchor the representation physically to the viewer, we encode the cell's size with the size of the class. Here, we use the source lines of code (SLOC) metric to represent the size [<a href="#ref-loc">5</a>]. That way, each cell is characterized by its content visually.</p>
 
-              <p>The dependencies are encoded as the edges.</p>
-              <p>
-                <strong>Interactions:</strong>
-                <ul style="list-style: none">
-                  <li>Hide / Show artifact</li>
-                  <li>Pin / Unpin artifact</li>
-                  <li>Navigate: click on links, zoom, pan</li>
-                  <li>Drill down / Up artifact: class > method > logic?</li>
-                </ul>
-              </p>
+              <p>Hovering displays information regarding the class</p>
+
+              <p>Control clicking a class, centers the visualization on it</p>
+
+              <p>Inter class or package relations (e.g., dependencies) can be toggled on and off with an extradiegetic interface.</p>
 
               <div class="algorithm">
                 <p><strong>Algorithm Design</strong></p>
-                <p>Hierarchical Voronoi</p>
+                <p>Voronoi treemaps [<a href="#ref-d3-voronoi-treemap">1</a>, <a href="#ref-balzer-voronoi-treemap">2</a>]</p>
               </div>
             </div>
           </div>
@@ -193,10 +191,10 @@
       <h2>References</h2>
 
       <ol>
-        <li>
+        <li id="ref-d3-voronoi-treemap">
           <p>Kcnarf. "D3 Voronoi Treemap." <a href="https://github.com/Kcnarf/d3-voronoi-treemap">https://github.com/Kcnarf/d3-voronoi-treemap</a>. Last accessed 2021-06-06</p>
         </li>
-        <li>
+        <li id="ref-balzer-voronoi-treemap">
           <p>Balzer, Michael, and Oliver Deussen. "Voronoi treemaps." IEEE Symposium on Information Visualization, 2005. INFOVIS 2005.. IEEE, 2005.</p>
         </li>
         <li>
@@ -204,6 +202,12 @@
         </li>
         <li>
           <p>Munzner, Tamara. "A nested model for visualization design and validation." IEEE transactions on visualization and computer graphics 15.6 (2009): 921-928.</p>
+        </li>
+        <li id="ref-loc">
+          <p>Alpernas, Kalev, Yotam MY Feldman, and Hila Peleg. "The wonderful wizard of LoC: paying attention to the man behind the curtain of lines-of-code metrics." Proceedings of the 2020 ACM SIGPLAN International Symposium on New Ideas, New Paradigms, and Reflections on Programming and Software. 2020.</p>
+        </li>
+        <li>
+          <p>https://github.com/AlDanial/cloc</p>
         </li>
       </ol>
       
