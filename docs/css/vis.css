@@ -30,13 +30,12 @@
 }
   
 .cell {
-    stroke: white;
+    stroke: rgb(0, 0, 0);
     stroke-width: 1px;
 }
 
 .label {
     text-anchor: middle;
-    fill: white;
 }
   
 .label>.name {
@@ -49,7 +48,7 @@
   
 .hoverer {
     fill: transparent;
-    stroke: white;
+    stroke: black;
     stroke-width:0px;
 }
   

@@ -4,6 +4,10 @@ let args4jData;
 
 function processHierarchy(json){
 
+    const seed = 0.42;
+    const source = d3.randomLcg(seed);
+    const random = d3.randomNormal.source(source)(1, 0.75)
+
     const classNames = json.classNames
 
     let hierarchy = classNames.map(fqnClassName => {
@@ -13,12 +17,11 @@ function processHierarchy(json){
         while (isClass(parent)) {
             parent = getPackage(parent)
         }
-        
-        // console.log(fqnClassName)
-        // console.log(parent)
 
         let ret = {
             name: fqnClassName,
+            code: getShortName(fqnClassName),
+            weight: random(),
             parent: parent
         }
 

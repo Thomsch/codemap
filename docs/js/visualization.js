@@ -6,15 +6,19 @@ function visualizeHierachy(container, hierarchy) {
   const centerX = width / 2;
   const centerY = height / 2;
 
-  // let root = d3.stratify()
-  //   .id(function(d) { return d.name; })
-  //   .parentId(function(d) { return d.parent; })
-  //   (hierarchy);
-  let rootData = globalEconomyJson
-   
+  let data = d3.stratify()
+    .id(function(d) { return d.name; })
+    .parentId(function(d) { return d.parent; })
+    (hierarchy);
+
+    var depthColor = d3.scaleSequential()
+      .domain([0, data.height])
+      .range([0.5, 0.6])
+      .interpolator(d3.interpolateGreys);
+
   var legendsMinY = height - 20;
   
-  var seededGenerator = new Math.seedrandom(rootData);
+  var seededGenerator = new Math.seedrandom(data);
   
   var voronoiTreemap = d3.voronoiTreemap()
     .clip([
@@ -25,7 +29,7 @@ function visualizeHierachy(container, hierarchy) {
     ])
     .prng(seededGenerator);
 
-  var hierarchy = d3.hierarchy(rootData).sum(function(d){ return d.weight; });
+  var hierarchy = d3.hierarchy(data).sum(function(d){ return d.data.weight; });
   voronoiTreemap(hierarchy); // compute tesselation.
   
   var fontScale = d3.scaleLinear();
@@ -44,27 +48,27 @@ function visualizeHierachy(container, hierarchy) {
 
   drawTreemap(hierarchy);
   
-  drawLegends(rootData);
+  let rootData = globalEconomyJson
+  // drawLegends(rootData);
 
   function drawTreemap(hierarchy) {
     var leaves = hierarchy.leaves();
     
     var cells = treemapContainer.append("g")
       .classed('cells', true)
-      // .attr("transform", "translate("+[-treemapRadius,-treemapRadius]+")")
       .selectAll(".cell")
       .data(leaves)
-      .enter()
-        .append("path")
-          .classed("cell", true)
-          .attr("d", function(d){ return "M"+d.polygon.join(",")+"z"; })
-          .style("fill", function(d){
-            return d.parent.data.color;
-          });
+      .join("path")
+      .classed("cell", true)
+      .attr('d', function (d) {
+        return d3.line()(d.polygon) + 'z';
+      })
+      .style("fill", function(d){
+        return depthColor(0);
+      });
     
     var labels = treemapContainer.append("g")
       .classed('labels', true)
-      // .attr("transform", "translate("+[-treemapRadius,-treemapRadius]+")")
       .selectAll(".label")
       .data(leaves)
       .enter()
@@ -73,29 +77,22 @@ function visualizeHierachy(container, hierarchy) {
           .attr("transform", function(d){
             return "translate("+[d.polygon.site.x, d.polygon.site.y]+")";
           })
-          .style("font-size", function(d){ return fontScale(d.data.weight); });
+          .style("font-size", function(d){ return fontScale(d.data.data.weight); });
     
     labels.append("text")
       .classed("name", true)
       .html(function(d){
-        return (d.data.weight<1)? d.data.code : d.data.name;
+        return d.data.data.code;
       });
-    labels.append("text")
-      .classed("value", true)
-      .text(function(d){ return d.data.weight+"%"; });
     
     var hoverers = treemapContainer.append("g")
       .classed('hoverers', true)
-      // .attr("transform", "translate("+[-treemapRadius,-treemapRadius]+")")
       .selectAll(".hoverer")
       .data(leaves)
       .enter()
         .append("path")
           .classed("hoverer", true)
           .attr("d", function(d){ return "M"+d.polygon.join(",")+"z"; });
-    
-    // hoverers.append("title")
-    //   .text(function(d) { return d.data.name + "\n" + d.value+"%"; });
     }
 
   function drawLegends(rootData) {
