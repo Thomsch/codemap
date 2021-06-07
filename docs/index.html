@@ -159,7 +159,13 @@
 
               <div class="algorithm">
                 <p><strong>Algorithm Design</strong></p>
-                <p>Voronoi treemaps [<a href="#ref-d3-voronoi-treemap">1</a>, <a href="#ref-balzer-voronoi-treemap">2</a>]</p>
+                <p>
+                  Voronoi treemaps [<a href="#ref-d3-voronoi-treemap">1</a>, <a href="#ref-balzer-voronoi-treemap">2</a>]
+                </p>
+
+                <p>
+                  The diagram is seeded so the map doesn't change every time its regenerated even though the content of the data doesn't change. The seed is assigned to the data so every time the data changes, a new map is generated, marking a new version of the data. In a live development setting, we would need a less naive approach. For example, growing the map as changes are made, minimizing displacement of the cells similarly how Gource [] does it.
+                </p>
               </div>
             </div>
           </div>
@@ -201,6 +207,10 @@
 
         <li id="codemap">
           <p>Zhu A, Seo, A, Verma S, Schweizer T. Codemap, <a href="https://github.com/amyjzhu/503-hacking/">https://github.com/amyjzhu/503-hacking/</a>. Last accessed 2021-06-06.</p>
+        </li>
+
+        <li id="ref-gource">
+          <p>Caudwell A. Gource, <a href="https://gource.io/">https://gource.io/</a>. Last accessed 2021-06-06.</p>
         </li>
       </ol>
       
