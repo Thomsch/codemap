@@ -66,6 +66,7 @@ function visualizeHierachy(container, hierarchy) {
 
   function drawTreemap(hierarchy) {
     var leaves = hierarchy.leaves();
+    let nodes = hierarchy.descendants();
     
     var cells = treemapContainer.append("g")
       .classed('cells', true)
@@ -81,6 +82,17 @@ function visualizeHierachy(container, hierarchy) {
       //   return depthColor(0);
       // })
       ;
+
+    let packages = treemapContainer.append("g")
+      .selectAll(".package")
+      .data(nodes)
+      .join("path")
+      .filter((d) => {
+        return d.depth > 0 && 'children' in d;
+      })
+      .attr("d", d => d3.line()(d.polygon) + "z")
+      .attr("stroke-width", d => d.depth + 2) // Dynamic depth
+      .classed("package", true)
     
     var labels = treemapContainer.append("g")
       .classed('labels', true)
