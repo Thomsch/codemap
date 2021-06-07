@@ -14,8 +14,8 @@ function processHierarchy(json){
             parent = getPackage(parent)
         }
         
-        console.log(fqnClassName)
-        console.log(parent)
+        // console.log(fqnClassName)
+        // console.log(parent)
 
         let ret = {
             name: fqnClassName,
