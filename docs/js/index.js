@@ -5,8 +5,8 @@ main();
 async function main() {
     const jsonData = await d3.json("./data/args4j.json"); 
 
-    // let classPackageHierarchy = processHierarchy(jsonData)
-    // visualizeHierachy(d3.select("#vis-hierachy"), classPackageHierarchy);
+    let classPackageHierarchy = processHierarchy(jsonData)
+    visualizeHierachy(d3.select("#vis-macro"), classPackageHierarchy);
 
     let data = processMethodData(jsonData);
     // let data = sampleData;
