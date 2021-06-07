@@ -1,5 +1,9 @@
 /* Style for the visualization elements */
 
+:root{
+    --accent-color: aquamarine;
+}
+
 .link {
     stroke: #000;
     stroke-width: 1.5px;
@@ -24,14 +28,14 @@
     stroke-width: 3px;
 }
 
-.world {
-    stroke: lightgrey;
-    stroke-width: 4px;
-}
-  
 .cell {
     stroke: rgb(0, 0, 0);
     stroke-width: 1px;
+    fill: white;
+}
+
+.current {
+    fill: var(--accent-color);
 }
 
 .label {
@@ -51,6 +55,14 @@
     stroke: black;
     stroke-width:0px;
 }
+
+.current.hoverer {
+    stroke: var(--accent-color);
+}
+
+.current.hoverer:hover {
+    filter: brightness(50%);
+  }
   
 .hoverer:hover {
     stroke-width: 3px;

@@ -6,6 +6,10 @@ function visualizeHierachy(container, hierarchy) {
   const centerX = width / 2;
   const centerY = height / 2;
 
+  let currentClass = hierarchy[Math.floor(Math.random() * hierarchy.length)]
+  console.log(currentClass.name);
+  // let centerNode = data.nodes[centerNodeIndex];
+
   let data = d3.stratify()
     .id(function(d) { return d.name; })
     .parentId(function(d) { return d.parent; })
@@ -69,19 +73,20 @@ function visualizeHierachy(container, hierarchy) {
       .data(leaves)
       .join("path")
       .classed("cell", true)
+      .classed("current", d => d.data.data.name === currentClass.name)
       .attr('d', function (d) {
         return d3.line()(d.polygon) + 'z';
       })
-      .style("fill", function(d){
-        return depthColor(0);
-      });
+      // .style("fill", function(d){
+      //   return depthColor(0);
+      // })
+      ;
     
     var labels = treemapContainer.append("g")
       .classed('labels', true)
       .selectAll(".label")
       .data(leaves)
-      .enter()
-        .append("g")
+      .join("g")
           .classed("label", true)
           .attr("transform", function(d){
             return "translate("+[d.polygon.site.x, d.polygon.site.y]+")";
@@ -98,10 +103,10 @@ function visualizeHierachy(container, hierarchy) {
       .classed('hoverers', true)
       .selectAll(".hoverer")
       .data(leaves)
-      .enter()
-        .append("path")
+      .join("path")
           .classed("hoverer", true)
-          .attr("d", function(d){ return "M"+d.polygon.join(",")+"z"; });
+          .classed("current", d => d.data.data.name === currentClass.name)
+          .attr("d", function(d){ return d3.line()(d.polygon) + "z"; });
     }
 
   function drawLegends(rootData) {
