@@ -39,6 +39,11 @@ function visualizeHierachy(container, hierarchy) {
     .append("svg")
     .attr("width", width)
     .attr("height", height);
+
+  svg.call(d3.zoom()
+    .scaleExtent([1, 8])
+    .translateExtent([[0, 0], [width, height]])
+    .on("zoom", zoomed));
     
   var drawingArea = svg.append("g")
     .classed("drawingArea", true);
@@ -50,6 +55,10 @@ function visualizeHierachy(container, hierarchy) {
   
   let rootData = globalEconomyJson
   // drawLegends(rootData);
+
+  function zoomed({transform}) {
+    drawingArea.attr("transform", transform);
+  }
 
   function drawTreemap(hierarchy) {
     var leaves = hierarchy.leaves();
