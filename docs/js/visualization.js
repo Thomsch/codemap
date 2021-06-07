@@ -14,12 +14,16 @@ function visualizeHierachy(container, hierarchy) {
    
   var legendsMinY = height - 20;
   
-  var voronoiTreemap = d3.voronoiTreemap().clip([
-    [0, 0],
-    [0, height],
-    [width, height],
-    [width, 0],
-  ]);
+  var seededGenerator = new Math.seedrandom(rootData);
+  
+  var voronoiTreemap = d3.voronoiTreemap()
+    .clip([
+      [0, 0],
+      [0, height],
+      [width, height],
+      [width, 0],
+    ])
+    .prng(seededGenerator);
 
   var hierarchy = d3.hierarchy(rootData).sum(function(d){ return d.weight; });
   voronoiTreemap(hierarchy); // compute tesselation.
