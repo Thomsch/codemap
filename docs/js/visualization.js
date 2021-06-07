@@ -75,9 +75,7 @@ function visualizeHierachy(container, hierarchy) {
       .join("path")
       .classed("cell", true)
       .classed("current", d => d.data.data.name === currentClass.name)
-      .attr('d', function (d) {
-        return d3.line()(d.polygon) + 'z';
-      })
+      .attr('d',  d => d3.line()(d.polygon) + 'z');
       // .style("fill", function(d){
       //   return depthColor(0);
       // })
@@ -118,8 +116,9 @@ function visualizeHierachy(container, hierarchy) {
       .join("path")
           .classed("hoverer", true)
           .classed("current", d => d.data.data.name === currentClass.name)
-          .attr("d", function(d){ return d3.line()(d.polygon) + "z"; });
-    }
+          .attr("d", d => d3.line()(d.polygon) + "z");
+  }
+
 
   function drawLegends(rootData) {
     var legendHeight = 13,
