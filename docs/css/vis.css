@@ -30,7 +30,7 @@
 
 .cell {
     stroke: rgb(0, 0, 0);
-    stroke-width: 1px;
+    stroke-width: 0.5px;
     fill: white;
 }
 
@@ -57,7 +57,7 @@
   
 .hoverer {
     fill: transparent;
-    stroke: black;
+    stroke: #FF7FAA; /* complementary of accentColor */
     stroke-width:0px;
 }
 
@@ -70,5 +70,5 @@
   }
   
 .hoverer:hover {
-    stroke-width: 3px;
+    stroke-width: 2px;
 }

@@ -1,11 +1,13 @@
 "use strict";
 
-function visualizeHierachy(container, hierarchy) {
+function visualizeHierachy(container, hierarchy, classes) {
   const width = container.node().clientWidth;
   const height = container.node().clientHeight;
   const legendHeight = 50;
+  const accentColor = "aquamarine"
 
-  let currentClass = hierarchy[Math.floor(Math.random() * hierarchy.length)]
+  let currentClassName = classes[Math.floor(Math.random() * classes.length)]
+  console.log(currentClassName)
 
   let data = d3.stratify()
     .id(function(d) { return d.name; })
@@ -14,8 +16,11 @@ function visualizeHierachy(container, hierarchy) {
 
   var depthColor = d3.scaleSequential()
     .domain([0, data.height])
-    .range([0.5, 0.6])
-    .interpolator(d3.interpolateGreys);
+    .range([0.0, 0.5]);
+
+  var borderScale = d3.scaleSequential()
+    .domain([data.height, 0])
+    .range([1,5]);
 
   var legendsMinY = height - 20;
   
@@ -76,11 +81,15 @@ function visualizeHierachy(container, hierarchy) {
       .data(leaves)
       .join("path")
       .classed("cell", true)
-      .classed("current", d => d.data.data.name === currentClass.name)
-      .attr('d',  d => d3.line()(d.polygon) + 'z');
-      // .style("fill", function(d){
-      //   return depthColor(0);
-      // })
+      .classed("current", d => d.data.data.name === currentClassName)
+      .attr('d',  d => d3.line()(d.polygon) + 'z')
+      .style("fill", function(d){
+        if(d.data.data.name === currentClassName) {
+          return accentColor
+        } else {
+          return d3.interpolateGreys(depthColor(d.depth));
+        }
+      })
       ;
 
     let packages = treemapContainer.append("g")
@@ -91,7 +100,7 @@ function visualizeHierachy(container, hierarchy) {
         return d.depth > 0 && 'children' in d;
       })
       .attr("d", d => d3.line()(d.polygon) + "z")
-      .attr("stroke-width", d => d.depth + 2) // Dynamic depth
+      .attr("stroke-width", d => borderScale(d.depth)) // Dynamic depth
       .classed("package", true)
     
     var labels = treemapContainer.append("g")
@@ -117,7 +126,7 @@ function visualizeHierachy(container, hierarchy) {
       .data(leaves)
       .join("path")
           .classed("hoverer", true)
-          .classed("current", d => d.data.data.name === currentClass.name)
+          .classed("current", d => d.data.data.name === currentClassName)
           .attr("d", d => d3.line()(d.polygon) + "z");
 
     hoverers.on('mouseover', function(e, d) {
