@@ -1,13 +1,11 @@
 "use strict";
 
-function visualizeHierachy(container, hierarchy, classes) {
+function visualizeHierachy(container, legend, hierarchy, classes) {
   const width = container.node().clientWidth;
   const height = container.node().clientHeight;
-  const legendHeight = 50;
   const accentColor = "aquamarine"
 
   let currentClassName = classes[Math.floor(Math.random() * classes.length)]
-  console.log(currentClassName)
 
   let data = d3.stratify()
     .id(function(d) { return d.name; })
@@ -21,16 +19,14 @@ function visualizeHierachy(container, hierarchy, classes) {
   var borderScale = d3.scaleSequential()
     .domain([data.height, 0])
     .range([1,5]);
-
-  var legendsMinY = height - 20;
   
   var seededGenerator = new Math.seedrandom(data);
   
   var voronoiTreemap = d3.voronoiTreemap()
     .clip([
       [0, 0],
-      [0, height - legendHeight],
-      [width, height - legendHeight],
+      [0, height],
+      [width, height],
       [width, 0],
     ])
     .prng(seededGenerator);
@@ -48,17 +44,26 @@ function visualizeHierachy(container, hierarchy, classes) {
     
   var drawingArea = svg.append("g")
     .classed("drawingArea", true);
-
-  var legendContainer = svg.append("g")
-    .classed("legend", true)
-    .attr("transform", "translate("+[0, height - legendHeight]+")");
-
-  const tooltip = legendContainer.append('text')
-    .attr('x', 10)
-    .attr('y', 30)
     
   var treemapContainer = drawingArea.append("g")
     .classed("treemap-container", true);
+
+  
+  const legendWidth = legend.node().clientWidth;
+  const legendHeight = legend.node().clientHeight;
+
+  legend.append("div")
+    .style("display", "inline")
+    .text("Class: ")
+
+  const classTooltip = legend.append("div")
+    .style("display", "inline")
+    .text("Hover on a class to obtain details about it.")
+
+  const packageTooltip = legend.append("div")
+    .text("Package: ")
+    .append("div").text("s")
+    .style("display", "inline")
 
   drawingArea.call(d3.zoom()
     .scaleExtent([1, 8])
@@ -131,11 +136,17 @@ function visualizeHierachy(container, hierarchy, classes) {
 
     hoverers.on('mouseover', function(e, d) {
       const {code, parent} = d.data.data
-      tooltip.text(`Class: ${code} | Package: ${parent}`)
+      classTooltip.text(code)
+      packageTooltip.text(parent)
     })
     .on('mouseout', function() {
-      tooltip.text("")
+      classTooltip.text("")
+      packageTooltip.text("")
     });
+  }
+
+  function drawLegend(legend) {
+
   }
 }
       
