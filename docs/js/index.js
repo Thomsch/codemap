@@ -3,7 +3,7 @@
 main();
 
 async function main() {
-    const jsonData = await d3.json("./data/args4j.json"); 
+    const jsonData = await d3.json("./data/midas.json"); 
 
     let classPackageHierarchy = processHierarchy(jsonData)
     visualizeHierachy(d3.select("#vis-macro"), classPackageHierarchy);

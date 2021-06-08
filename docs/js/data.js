@@ -10,6 +10,9 @@ function processHierarchy(json){
 
     const classNames = json.classNames
 
+    let packages = new Set()
+    let roots = new Set()
+
     let hierarchy = classNames.map(fqnClassName => {
         let parent = getPackage(fqnClassName);
         
@@ -18,25 +21,52 @@ function processHierarchy(json){
             parent = getPackage(parent)
         }
 
+        packages.add(parent)
+
         let ret = {
             name: fqnClassName,
             code: getShortName(fqnClassName),
             weight: random(),
-            parent: parent
+            parent: parent ? parent : "root"
         }
 
         return ret
     });
 
-    hierarchy.push({
-        name: "org.kohsuke.args4j",
-        parent: ""
-    })    
-    
-    hierarchy.push({
-        name: "org.kohsuke.args4j.spi",
-        parent: "org.kohsuke.args4j"
+    packages.forEach(p => {
+
+      if(p == "") return;
+
+      let parent = getPackage(p);
+
+      if(parent == "") {
+        roots.add(p)
+        return;
+      }
+
+      if(parent.indexOf(".") == -1) {
+        roots.add(parent)
+      }
+
+      hierarchy.push({
+        name: p,
+        parent: parent
+      })
     })
+
+    if(roots.size > 1) {
+      roots.forEach(r => {
+        hierarchy.push({
+          name: r,
+          parent: "root"
+        })
+      })
+
+      hierarchy.push({
+        name: "root",
+        parent: ""
+      })
+    }
     
   return hierarchy
 }
@@ -62,6 +92,10 @@ function processMethodData(json) {
             }));
         });
     });
+
+    links = links.filter(link => link.target != -1)
+
+    console.log({links})
 
     return { nodes: nodes, links: links}
 }

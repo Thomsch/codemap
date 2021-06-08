@@ -6,8 +6,6 @@ function visualizeHierachy(container, hierarchy) {
   const legendHeight = 50;
 
   let currentClass = hierarchy[Math.floor(Math.random() * hierarchy.length)]
-  console.log(currentClass.name);
-  // let centerNode = data.nodes[centerNodeIndex];
 
   let data = d3.stratify()
     .id(function(d) { return d.name; })
