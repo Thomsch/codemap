@@ -10,6 +10,5 @@ async function main() {
     visualizeHierachy(d3.select("#vis-macro"), classPackageHierarchy, classes);
 
     let data = processMethodData(jsonData);
-    // let data = sampleData;
     visualizeMethods(d3.select("#method-level"), data, classes)
 }
