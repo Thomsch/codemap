@@ -3,8 +3,7 @@
 function visualizeHierachy(container, hierarchy) {
   const width = container.node().clientWidth;
   const height = container.node().clientHeight;
-  const centerX = width / 2;
-  const centerY = height / 2;
+  const legendHeight = 50;
 
   let currentClass = hierarchy[Math.floor(Math.random() * hierarchy.length)]
   console.log(currentClass.name);
@@ -15,10 +14,10 @@ function visualizeHierachy(container, hierarchy) {
     .parentId(function(d) { return d.parent; })
     (hierarchy);
 
-    var depthColor = d3.scaleSequential()
-      .domain([0, data.height])
-      .range([0.5, 0.6])
-      .interpolator(d3.interpolateGreys);
+  var depthColor = d3.scaleSequential()
+    .domain([0, data.height])
+    .range([0.5, 0.6])
+    .interpolator(d3.interpolateGreys);
 
   var legendsMinY = height - 20;
   
@@ -27,8 +26,8 @@ function visualizeHierachy(container, hierarchy) {
   var voronoiTreemap = d3.voronoiTreemap()
     .clip([
       [0, 0],
-      [0, height],
-      [width, height],
+      [0, height - legendHeight],
+      [width, height - legendHeight],
       [width, 0],
     ])
     .prng(seededGenerator);
@@ -43,23 +42,28 @@ function visualizeHierachy(container, hierarchy) {
     .append("svg")
     .attr("width", width)
     .attr("height", height);
-
-  svg.call(d3.zoom()
-    .scaleExtent([1, 8])
-    .translateExtent([[0, 0], [width, height]])
-    .on("zoom", zoomed));
     
   var drawingArea = svg.append("g")
     .classed("drawingArea", true);
+
+  var legendContainer = svg.append("g")
+    .classed("legend", true)
+    .attr("transform", "translate("+[0, height - legendHeight]+")");
+
+  const tooltip = legendContainer.append('text')
+    .attr('x', 10)
+    .attr('y', 30)
     
   var treemapContainer = drawingArea.append("g")
     .classed("treemap-container", true);
 
+  drawingArea.call(d3.zoom()
+    .scaleExtent([1, 8])
+    .translateExtent([[0, 0], [width, height]])
+    .on("zoom", zoomed));
+
   drawTreemap(hierarchy);
   
-  let rootData = globalEconomyJson
-  // drawLegends(rootData);
-
   function zoomed({transform}) {
     drawingArea.attr("transform", transform);
   }
@@ -117,45 +121,15 @@ function visualizeHierachy(container, hierarchy) {
           .classed("hoverer", true)
           .classed("current", d => d.data.data.name === currentClass.name)
           .attr("d", d => d3.line()(d.polygon) + "z");
-  }
 
-
-  function drawLegends(rootData) {
-    var legendHeight = 13,
-        interLegend = 4,
-        colorWidth = legendHeight,
-        continents = rootData.children.reverse();
-    
-    var legendContainer = drawingArea.append("g")
-      .classed("legend", true)
-      .attr("transform", "translate("+[0, legendsMinY]+")");
-    
-    var legends = legendContainer.selectAll(".legend")
-      .data(continents)
-      .enter();
-    
-    var legend = legends.append("g")
-      .classed("legend", true)
-      .attr("transform", function(d,i){
-        return "translate("+[0, -i*(legendHeight+interLegend)]+")";
-      })
-      
-    legend.append("rect")
-      .classed("legend-color", true)
-      .attr("y", -legendHeight)
-      .attr("width", colorWidth)
-      .attr("height", legendHeight)
-      .style("fill", function(d){ return d.color; });
-    legend.append("text")
-      .classed("tiny", true)
-      .attr("transform", "translate("+[colorWidth+5, -2]+")")
-      .text(function(d){ return d.name; });
-    
-    legendContainer.append("text")
-      .attr("transform", "translate("+[0, -continents.length*(legendHeight+interLegend)-5]+")")
-      .text("Continents");
+    hoverers.on('mouseover', function(e, d) {
+      const {code, parent} = d.data.data
+      tooltip.text(`Class: ${code} | Package: ${parent}`)
+    })
+    .on('mouseout', function() {
+      tooltip.text("")
+    });
   }
-  
 }
       
 function visualizeMethods(container, data, classes) {
@@ -199,8 +173,8 @@ function visualizeMethods(container, data, classes) {
     .attr("r", 20);
 
   const tooltip = svg.append('text')
-  .attr('x', 10)
-  .attr('y', height - 10);
+    .attr('x', 10)
+    .attr('y', height - 10);
 
   const simulation = d3
     .forceSimulation()
