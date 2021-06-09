@@ -52,17 +52,24 @@ function visualizeHierachy(container, legend, hierarchy, classes) {
   const legendWidth = legend.node().clientWidth;
   const legendHeight = legend.node().clientHeight;
 
-  legend.append("div")
+  const classLegend = legend.append("div")
+  const packageLegend = legend.append("div")
+
+  classLegend.append("div")
     .style("display", "inline")
+    .append("b")
     .text("Class: ")
 
-  const classTooltip = legend.append("div")
+  const classTooltip = classLegend.append("div")
     .style("display", "inline")
     .text("Hover on a class to obtain details about it.")
 
-  const packageTooltip = legend.append("div")
+  packageLegend.append("div")
+    .style("display", "inline")
+    .append("b")
     .text("Package: ")
-    .append("div").text("s")
+
+  const packageTooltip = packageLegend.append("div")
     .style("display", "inline")
 
   drawingArea.call(d3.zoom()
