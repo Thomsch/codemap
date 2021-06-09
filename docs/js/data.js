@@ -24,7 +24,7 @@ function processHierarchy(json){
         let ret = {
             name: fqnClassName,
             code: getShortName(fqnClassName),
-            weight: random(),
+            weight: random(), // Simulate the number of lines of code, or size.
             parent: parent ? parent : "root"
         }
 

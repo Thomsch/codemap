@@ -19,6 +19,9 @@ function visualizeHierachy(container, legend, hierarchy, classes) {
   var borderScale = d3.scaleSequential()
     .domain([data.height, 0])
     .range([1,5]);
+
+  // Using a linear scale for the font size causes performance issues when zooming.
+  // let fontScale = d3.scaleLinear().domain([0, 1]).range([9, 20]).clamp(true);
   
   var seededGenerator = new Math.seedrandom(data);
   
@@ -34,9 +37,6 @@ function visualizeHierachy(container, legend, hierarchy, classes) {
   var hierarchy = d3.hierarchy(data).sum(function(d){ return d.data.weight; });
   voronoiTreemap(hierarchy); // compute tesselation.
   
-  var fontScale = d3.scaleLinear();
-  fontScale.domain([3, 20]).range([8, 20]).clamp(true);
-  
   var svg = container
     .append("svg")
     .attr("width", width)
@@ -48,7 +48,6 @@ function visualizeHierachy(container, legend, hierarchy, classes) {
   var treemapContainer = drawingArea.append("g")
     .classed("treemap-container", true);
 
-  
   const legendWidth = legend.node().clientWidth;
   const legendHeight = legend.node().clientHeight;
 
@@ -124,7 +123,15 @@ function visualizeHierachy(container, legend, hierarchy, classes) {
           .attr("transform", function(d){
             return "translate("+[d.polygon.site.x, d.polygon.site.y]+")";
           })
-          .style("font-size", function(d){ return fontScale(d.data.data.weight); });
+          .style("font-size", function(d){ 
+            if(d.data.data.weight < 0.3){
+              return 4;
+            } else if(d.data.data.weight < 0.6){
+              return 6;
+            } else {
+              return 8;
+            }
+           });
     
     labels.append("text")
       .classed("name", true)
