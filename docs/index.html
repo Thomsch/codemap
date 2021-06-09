@@ -121,56 +121,59 @@
         In this prototype, we explore how the class and package hierarchy can be visualized from an initial perspective using Voronoi diagrams. For example using <a href="https://github.com/Kcnarf/d3-voronoi-treemap">d3-voronoi-treemap</a>.
       </p>
 
-      <div class="nested-model">
-        <div class="domain">
-          <p><strong>Domain Problem and Data Characterization</strong></p>
-          <p>
-            We are interested to help the developer build a mental image of the source code. Mental image of the source code is necessary before fixing a bug or implementing a new feature to locate artifacts or interest.
-          </p>
-          <p>
-            Conducted a user study on a rough visualization prototype integrated to Visual Studio Code as a plugin to gather initial feedback. Participants noted that integration was really important and used the zooming mechanism to move from low abstraction to high abstraction.
-          </p>
+      <details>
+        <summary>Nested Model</summary>
+        <div class="nested-model">
+          <div class="domain">
+            <p><strong>Domain Problem and Data Characterization</strong></p>
+            <p>
+              We are interested to help the developer build a mental image of the source code. Mental image of the source code is necessary before fixing a bug or implementing a new feature to locate artifacts or interest.
+            </p>
+            <p>
+              Conducted a user study on a rough visualization prototype integrated to Visual Studio Code as a plugin to gather initial feedback. Participants noted that integration was really important and used the zooming mechanism to move from low abstraction to high abstraction.
+            </p>
 
-          <div class="abstraction">
-            <p><strong>Operation and Data Type Abstraction</strong></p>
-            <p>Transform the class and package hierarchy into a list of parent and children relations. The hierarchy is illustrated with Voronoi treemaps [<a href="#ref-balzer-voronoi-treemap">2</a>];</p>
+            <div class="abstraction">
+              <p><strong>Operation and Data Type Abstraction</strong></p>
+              <p>Transform the class and package hierarchy into a list of parent and children relations. The hierarchy is illustrated with Voronoi treemaps [<a href="#ref-balzer-voronoi-treemap">2</a>];</p>
 
-            <div class="technique">
-              <p><strong>Visual Encoding and Interaction Design</strong></p>
-
-              <p>
-                Simple Radial tree with local node centered. Pan and Zoom
-                Interactivity features.
-              </p>
-              
-              <p>The Voronoi treemap is monochromatic. The cells represent classes and the edges represent class and packages boundaries.</p>
-              
-              <p>The current class is encoded with an accent color for pre-attentive detection.</p>
-
-              <p>To anchor the representation physically to the viewer, we encode the cell's size with the size of the class. Here, we use the source lines of code (SLOC) metric to represent the size [<a href="#ref-loc">5</a>]. That way, each cell is characterized by its content visually.</p>
-
-              <p>Hovering displays information regarding the class</p>
-
-              <p>Search bar to find a class quickly.</p>
-
-              <p>Control clicking a class, centers the visualization on it</p>
-
-              <p>Inter class or package relations (e.g., dependencies) can be toggled on and off with an extradiegetic interface.</p>
-
-              <div class="algorithm">
-                <p><strong>Algorithm Design</strong></p>
-                <p>
-                  Voronoi treemaps [<a href="#ref-d3-voronoi-treemap">1</a>, <a href="#ref-balzer-voronoi-treemap">2</a>]
-                </p>
+              <div class="technique">
+                <p><strong>Visual Encoding and Interaction Design</strong></p>
 
                 <p>
-                  The diagram is seeded so the map doesn't change every time its regenerated even though the content of the data doesn't change. The seed is assigned to the data so every time the data changes, a new map is generated, marking a new version of the data. In a live development setting, we would need a less naive approach. For example, growing the map as changes are made, minimizing displacement of the cells similarly how Gource [<a href="#ref-gource">10</a>], a popular version control visualization, does it.
+                  Simple Radial tree with local node centered. Pan and Zoom
+                  Interactivity features.
                 </p>
+                
+                <p>The Voronoi treemap is monochromatic. The cells represent classes and the edges represent class and packages boundaries.</p>
+                
+                <p>The current class is encoded with an accent color for pre-attentive detection.</p>
+
+                <p>To anchor the representation physically to the viewer, we encode the cell's size with the size of the class. Here, we use the source lines of code (SLOC) metric to represent the size [<a href="#ref-loc">5</a>]. That way, each cell is characterized by its content visually.</p>
+
+                <p>Hovering displays information regarding the class</p>
+
+                <p>Search bar to find a class quickly.</p>
+
+                <p>Control clicking a class, centers the visualization on it</p>
+
+                <p>Inter class or package relations (e.g., dependencies) can be toggled on and off with an extradiegetic interface.</p>
+
+                <div class="algorithm">
+                  <p><strong>Algorithm Design</strong></p>
+                  <p>
+                    Voronoi treemaps [<a href="#ref-d3-voronoi-treemap">1</a>, <a href="#ref-balzer-voronoi-treemap">2</a>]
+                  </p>
+
+                  <p>
+                    The diagram is seeded so the map doesn't change every time its regenerated even though the content of the data doesn't change. The seed is assigned to the data so every time the data changes, a new map is generated, marking a new version of the data. In a live development setting, we would need a less naive approach. For example, growing the map as changes are made, minimizing displacement of the cells similarly how Gource [<a href="#ref-gource">10</a>], a popular version control visualization, does it.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </details>
 
       <div id='vis-macro' class="visualization"></div>
       <div id='vis-macro-legend' class="legend"></div>
