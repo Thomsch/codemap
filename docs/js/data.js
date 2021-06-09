@@ -93,8 +93,6 @@ function processMethodData(json) {
 
     links = links.filter(link => link.target != -1)
 
-    console.log({links})
-
     return { nodes: nodes, links: links}
 }
 
