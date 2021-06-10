@@ -88,6 +88,18 @@
         and the IDE because the basic mechanisms were implemented in the previous prototype. Moreover, in the visualization concepts below, we implicitly assume that the visualizations are implemented in the context of a development environment that would update the data model with the most up-to-date information. Crucially, we also implicitly keep the interaction feature of control click introduced in the legacy prototype that enables the user to switch between an element in the visualization to its source code equivalent.
       </p>
 
+      <!-- 
+        Related work
+       -->
+      <h2>Related work</h2>
+      <p>A very similar approach is Sourcetrail [<a href="#ref-sourcetrail">7</a>]</p>
+
+      <p>Elmqvist et al. present ... [<a href="#ref-elmqvist-hierarchical">8</a>].</p>
+
+      <!-- 
+        Prototype
+       -->
+      <h2>Background</h2>
       <p>
         Below, we present an global overview of Codemap using Munzner's nested model [<a href="#ref-munzner">4</a>]. The
         closest working implementation is currently the Codemap prototype used to do the initial user study [<a
@@ -96,18 +108,18 @@
         experience.
       </p>
 
-      <h2>Related work</h2>
-      <p>A very similar approach is Sourcetrail [<a href="#ref-sourcetrail">7</a>]</p>
-
-      <p>Elmqvist et al. present ... [<a href="#ref-elmqvist-hierarchical">8</a>].</p>
-
+      <!-- 
+        Challenges
+       -->
       <h2>Challenges</h2>
       <p>Scalability</p>
       <p>Comnplexity</p>
       <p>Performance</p>
 
-      <h2>Visualization</h2>
-      <h3>Methods</h3>
+      <!-- 
+        Local exploration
+       -->
+      <h2>Local exploration</h2>
       <p>
         In this prototype, we explore how dependencies between methods can be visualized from an initial method using
         radial tree and hierarchical edge bundling.
@@ -226,7 +238,10 @@
 
       <p></p>
 
-      <h3>Level: macro</h3>
+      <!-- 
+        Structure overview
+       -->
+      <h2>Structure overview</h2>
       <p>
         In this prototype, we explore how the class and package hierarchy can be visualized from an initial perspective
         using Voronoi diagrams. For example using <a
@@ -307,13 +322,17 @@
       <div id='vis-macro-legend' class="legend"></div>
       <p class="hint">Refresh the page to change the point of view (i.e., current class)</p>
 
-
+      <!-- 
+        Evaluation
+       -->
       <h2>Evaluation</h2>
       The next step is to evaluate the efficiency and efficacy of the visualizations explored in this project. We
       propose several strategies to evaluate the visualizations based on related work seen in class and in the
       literature.
 
-
+       <!-- 
+         Conclusion
+        -->
       <h2>Conclusion</h2>
       <p>
         With this final course project, I was able to advance my research and apply concepts learned in class.
@@ -335,7 +354,6 @@
       <section>
         <h2>References</h2>
         <!-- Vancouver Reference Style -->
-
         <ol>
           <li id="ref-d3-voronoi-treemap">
             <p>Kcnarf. "D3 Voronoi Treemap." <a
@@ -393,13 +411,12 @@
             </p>
           </li>
         </ol>
-
       </section>
 
-      <div class="footer">
+      <section class="footer">
         <a href="https://courses.cs.washington.edu/courses/cse512/21sp/">CSE 512 Data Visualization</a>
         <a href="http://www.washington.edu">University of Washington</a>
-      </div>
+      </section>
 
       <script src="https://d3js.org/d3.v6.min.js"></script>
       <script src="https://rawcdn.githack.com/Kcnarf/d3-weighted-voronoi/v1.1.0/build/d3-weighted-voronoi.js"></script>
