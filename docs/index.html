@@ -115,7 +115,7 @@
        -->
       <h2 id="ref-related-work">Related work</h2>
       <p>
-        In our initial survey literature, we retained papers that we deemed most relevant and representative to serve as a starting point for snowball sampling [<a href="#ref-snowball">26</a>]. Chotisarn et al., dress an exhaustive portrait of the software visualization research landscape in a recent paper [<a href="#ref-chotisarn-survey">24</a>]. Using a systematic review literature methodology, they retained 105 relevant full papers on software visualization. In addition of highlighting research opportunities, the paper also provide effective tools to orient and scope research in software visualization. This article is thus doubly useful for us. Moreover, they classify the relevant papers by software system aspect (i.e., structure, behavior, evolution [<a href="#ref-diehl">25</a>]), software process (i.e., specification, design & implementation, validation & testing, evolution), and role (i.e., developer, maintainer, manager) as well as visualization technique, mediums and tools.
+        In our initial survey literature, we retained papers that we deemed most relevant and representative to serve as a starting point for snowball sampling [<a href="#ref-snowball">25</a>]. Chotisarn et al., dress an exhaustive portrait of the software visualization research landscape in a recent paper [<a href="#ref-chotisarn-survey">23</a>]. Using a systematic review literature methodology, they retained 105 relevant full papers on software visualization. In addition of highlighting research opportunities, the paper also provide effective tools to orient and scope research in software visualization. This article is thus doubly useful for us. Moreover, they classify the relevant papers by software system aspect (i.e., structure, behavior, evolution [<a href="#ref-diehl">24</a>]), software process (i.e., specification, design & implementation, validation & testing, evolution), and role (i.e., developer, maintainer, manager) as well as visualization technique, mediums and tools.
       </p>
 
       <p>
@@ -126,15 +126,15 @@
 
       <h3>Solutions</h3>
       <p>
-        Finally, we explored commercial and open-source solutions to get a picture of the landscape as complete as possible. We found surprisingly many solutions and approaches. Most of them concentrate on audit-type visualizations where big picture is presented to the viewer [<a href="#ref-depwheel">16-21</a>], although a portion of them are bit more "esoteric" such as Gource [<a href="#ref-gource">14</a>] and CodeFlower [<a href="#ref-codeflower">15</a>]. We also found that a minority of solutions are integrated with the developer's workflow [<a href="#ref-ndepend">21-23</a>].
+        Finally, we explored commercial and open-source solutions to get a picture of the landscape as complete as possible. We found surprisingly many solutions and approaches. Most of them concentrate on audit-type visualizations where big picture is presented to the viewer [<a href="#ref-depwheel">15-20</a>], although a portion of them are bit more "esoteric" such as Gource [<a href="#ref-gource">10</a>] and CodeFlower [<a href="#ref-codeflower">14</a>]. We also found that a minority of solutions are integrated with the developer's workflow [<a href="#ref-ndepend">20-22</a>].
       </p>
       <p>
-        We found that NDepend [<a href="#ref-ndepend">21</a>] was the closest to our overall idea, implementing a zooming mechanism enabling the user to drill down at will. See <a href="https://blog.ndepend.com/visualize-code-with-software-architecture-diagrams/">this article</a> for a detailed look. Sourcetrail [<a href="#ref-sourcetrail">7</a>] also caught our attention because it seemed to be the most thoughtful solution out there. Indeed, it addresses a clear problem well and the user interface seems intuitive and well thought-out so as to not overwhelm the viewer.
+        We found that NDepend [<a href="#ref-ndepend">20</a>] was the closest to our overall idea, implementing a zooming mechanism enabling the user to drill down at will. See <a href="https://blog.ndepend.com/visualize-code-with-software-architecture-diagrams/">this article</a> for a detailed look. Sourcetrail [<a href="#ref-sourcetrail">7</a>] also caught our attention because it seemed to be the most thoughtful solution out there. Indeed, it addresses a clear problem well and the user interface seems intuitive and well thought-out so as to not overwhelm the viewer.
       </p>
 
       <h3>Venues</h3>
       <p>
-        Through the course and initial literature survey, we identified relevant venues for software visualization such as <a href="https://chi2021.acm.org/">CHI</a>, <a href="https://uist.acm.org">UIST</a>, <a href="http://ieeevis.org/year/2021/welcome">IEEE VIS</a>, <a href="https://vissoft20.dcc.uchile.cl/">IEEE VISSOFT</a>, <a href="https://www.eurovis.org/">EuroVis</a>, and <a href="https://www.springer.com/journal/12650">Journal of Visualization</a>. These references will be helpful to gather the latest state of the art and communicate our research using the methods and conventions used by the visualization community in addition to the software visualization survey paper [<a href="#ref-chotisarn-survey">24</a>].
+        Through the course and initial literature survey, we identified relevant venues for software visualization such as <a href="https://chi2021.acm.org/">CHI</a>, <a href="https://uist.acm.org">UIST</a>, <a href="http://ieeevis.org/year/2021/welcome">IEEE VIS</a>, <a href="https://vissoft20.dcc.uchile.cl/">IEEE VISSOFT</a>, <a href="https://www.eurovis.org/">EuroVis</a>, and <a href="https://www.springer.com/journal/12650">Journal of Visualization</a>. These references will be helpful to gather the latest state of the art and communicate our research using the methods and conventions used by the visualization community in addition to the software visualization survey paper [<a href="#ref-chotisarn-survey">23</a>].
       </p>
 
       <!-- 
@@ -152,9 +152,9 @@
         The biggest challenge is to design a readable visualization by the user of the visualization, the developer. It
         is vital in visualizing software as the complexity of source code can explode very fast. We know that human
         perception has limits and conditions, as seen during the course with Healy et al. [<a
-        href="#ref-healey-attention">27</a>] notably. A good example of this phenomenon is the  <em>Deutsch limit</em>
+        href="#ref-healey-attention">26</a>] notably. A good example of this phenomenon is the  <em>Deutsch limit</em>
         suggesting that humans have a fairly low limit on the number of entities they can keep in memory at any given
-        moment [<a href="#ref-deutsch">28</a>] (Has the Deutsch limit ever been verified? I remember reading an article
+        moment [<a href="#ref-deutsch">27</a>] (Has the Deutsch limit ever been verified? I remember reading an article
         where the actual number was way below the Deutsch limit).
       </p>
 
@@ -179,7 +179,7 @@
         Representing software is difficult because it doesn't have an inherent physical representation that the
         developer can identify intuitively. The same observation was made by Tufte regarding the conundrum of
         representing <em>information</em> such as comparing two measures, or more generally showing statistics [<a
-        href="#ref-tufte">29</a>]. Fortunately, this is somewhat mitigated by the fact that developers are used to
+        href="#ref-tufte">28</a>]. Fortunately, this is somewhat mitigated by the fact that developers are used to
         thinking abstractly and already use common symbols (e.g., UML) to communicate more or less formally about
         software systems, behavior, and architecture. Nonetheless, we need to be careful that the visualization is not
         going against these colloquially accepted symbols and that we stay consistent across the visualization levels.
@@ -445,31 +445,66 @@
       <h3>Second iteration</h3>
 
       <p>
-        For this second design, the amount of information shown is directly controlled by the developer through interaction. The developer would builds the visualization as their own from a minimal initial set of nodes;  this solves our earlier problems regarding unrelated edges and nodes, and color overload. The hope is that by starting with a minimal visualization, the developer auto-regulate the complexity they need displayed, enabling them to focus on different aspects in function of the information they need at the time.
+        For this second design, the amount of information shown is directly controlled by the developer through
+        interaction. The developer would build up the visualization from a minimal initial set of nodes;  this solves
+        our earlier problems regarding unrelated edges and nodes, and color overload. The hope is that by starting with
+        a minimal visualization, the developer auto-regulates the complexity they need displayed, enabling them to focus
+        on different aspects in function of the information they need at the time.
       </p>
 
       <p>
-        Picture this. The visual metaphor is still a network graph with methods and classes represented as nodes, and the edges represent the type of dependencies. The visualization initially shows only direct dependencies related to the method under visualization (referred as 'origin method'). The dependency nodes include type of parameters, type of variables, classes used, method used, and which other methods use the origin method. Incoming and outgoing dependencies are differentiated with corresponding arrows. For example, a node representing a parameter type of the origin method has an incoming arrowed edge to the origin's node while an outgoing arrowed edge would connect to a node representing where the method's is called from. The visualization is still centered on origin method. The related nodes are organized using an augmented force layout where similar nodes tend to group together (e.g., type parameter) or borrowing from topology trees, types or method far away semantically or package wise would be shown less close to the center node than its immediate related nodes such as methods in the same class or package.
+        Picture this. The visual metaphor is still a network graph with methods and classes represented as nodes, and
+        the edges represent the type of dependencies. The visualization initially shows only direct dependencies related
+        to the method under visualization (referred to as 'origin method'). The dependency nodes include the type of
+        parameters, type of variables, classes used, method used, and methods using the origin method. Incoming and
+        outgoing dependencies are differentiated with corresponding arrows. For example, a node representing a parameter
+        type of the origin method has an incoming arrowed edge to the origin's node. In contrast, an outgoing arrowed
+        edge would connect to a node representing where the method is called from. The visualization is still centered
+        on the origin method. The related nodes are organized using a force layout where similar nodes tend to group
+        (e.g., type parameter). Alternatively,  borrowing from topology trees, types and methods far away semantically
+        or package-wise would be shown less close to the center node than its immediate related nodes such as methods in
+        the same class or package.
       </p>
 
       <p>
-        Clicking on a node (except the origin) will, in turn, expand the dependencies of the clicked node just like for the origin method and center the visualization on this new node of focus. A breadcrumb mechanism highlights the path (i.e., making the edges thicker) between the origin node and the node currently in focus (or hovered) allowing the developer to visually have a reference for tracing back their steps, much like how Ariadne's thread allowed Theseus to escape the Minotaur's labyrinth in the eponym greek myth. We also include an extra-diegetic control on the bottom left of the visualization allows the developer at any time to focus the visualization back to the origin node so they don't have to follow the breadcrumb. This is especially useful if they have explored a large network and do not want to scroll or pan all the way back.
+        Clicking on a node (except the origin) will, in turn, expand the dependencies of the clicked node, just like for
+        the origin method, and center the visualization on this new node of focus. A breadcrumb mechanism highlights the
+        path (i.e., making the edges thicker) between the origin node and the node currently in focus (or hovered),
+        allowing the developer to visually have a reference for tracing back their steps, much like how Ariadne's thread
+        allowed Theseus to escape the Minotaur's labyrinth in the eponym greek myth. We also include an extra-diegetic
+        control on the bottom left of the visualization allows the developer at any time to focus the visualization back
+        to the origin node, so they don't have to follow the breadcrumb. This is especially useful if they have explored
+        a large network and do not want to scroll or pan all the way back.
       </p>
 
       <p>
-        Hovering on an edge or a node gives contextual clues such as the name of the method, class and parameter similar to how the quick access documentation might show in an IDE. We prefer keeping the amount of textual information on the graph light to not clutter the graph so the developer is encouraged to explore.
+        Hovering on an edge or a node gives contextual clues such as the name of the method, class, and parameter, similar to how the quick access documentation might show in an IDE. We prefer keeping the amount of textual information on the graph light not to clutter the graph to encourage the developer to explore.
 
-        For the developer's comfort, they can also drag, and pin nodes to arrange their graph how they like or see it. We could imagine an advanced feature where we learn their positioning preference automatically to reposition the nodes for them, relying less on the force layout's idiosyncrasies.
+        The developer can also drag and pin nodes to arrange their graph how they like or see it. We could imagine an
+        advanced feature where we learn their positioning preference automatically to reposition the nodes for them,
+        relying less on the force layout's idiosyncrasies.
       </p>
 
       <p>
-        Similarly to the macro visualization concept, we encode the size of the nodes with the size of the method (e.g., SLOC [<a href="#ref-loc">5</a>]) to give the nodes a "physical" anchor to their source code counterparts. We hope that this will help developers to intuitively form a connexion between the methods' source code and their visual representation.
+        Similar to the previous visualization concept, we encode the size of the nodes with the size of the method
+        (e.g., SLOC [<a href="#ref-loc">5</a>, <a href="#ref-cloc">6</a>]) to give the nodes a "physical" anchor to their source code counterparts.
+        We hope that this will help developers intuitively form a connection between the methods' source code and their
+        visual representation.
 
         Finally, edge bundling could be leverage here when the developer zooms back and forth as a way to highlight common fate patterns and be easier on the eye and performance [<a href="#ref-hierarchical-bundles">12</a>].
       </p>
 
       <p>
-        To further help the developer parse the graph quickly, we are also curious to explore encoding the node's shape based on its type or function. For example, a method is encoded as a circle and an parameter type as a triangle. We would prefer reusing standard shape encodings but we couldn't find any so far in our initial literature review. If methods are exclusively represented as polygons, we briefly considered encoding the method's complexity as the polygon's number of sides to give an additional clue for the developer's exploration. Encoding the number of sides as a linear relationship might be confusing if the method is very complex, although the method would most likely be large in size at the same time so its size encoding might mitigating the confusion. If anything, it could give a strong signal to the developer that they might want to refactor that method [<a href="#ref-refactoring">11</a>]. An alternative would be to split the domain in a stepped range with 3 or 5 options corresponding to increasing orders of complexity that's easy to parse and non-ambiguous.
+        To further help the developer parse the graph quickly, we are also curious to explore encoding the node's shape
+        based on its type or function. For example, a method is encoded as a circle and a parameter type as a triangle.
+        We would prefer reusing standard shape encodings, but we couldn't find any so far in our initial literature
+        review. If methods are exclusively represented as polygons, we briefly considered encoding the method's
+        complexity as the polygon's number of sides to give an additional clue for the developer's exploration. Encoding
+        the number of sides as a linear relationship might be confusing if the method is very complex. However, the
+        method would also most likely be large simultaneously, so its size encoding might mitigate the confusion. If
+        anything, it could give a strong signal to the developer that they might want to refactor that method [<a
+        href="#ref-refactoring">11</a>]. An alternative would be to split the domain in a stepped range with 3 or 5
+        options corresponding to increasing orders of complexity that are easy to parse and non-ambiguous.
       </p>
 
        <!-- 
@@ -522,7 +557,7 @@
               curtain of lines-of-code metrics. InProceedings of the 2020 ACM SIGPLAN International Symposium on New
               Ideas, New Paradigms, and Reflections on Programming and Software 2020</p>
           </li>
-          <li id="ref-loc">
+          <li id="ref-cloc">
             <p>
               AlDanial. cloc. <a href="https://github.com/AlDanial/cloc">https://github.com/AlDanial/cloc</a>. Last accessed 2021-06-09
             </p>
@@ -565,18 +600,44 @@
             </p>
           </li>
 
-          <li id="ref-gource"><p>https://gource.io/</p></li>
-          <li id="ref-codeflower"><p>https://github.com/fzaninotto/CodeFlower</p></li>
+          <li id="ref-codeflower">
+            <p>
+              Zaninotto F. CodeFlower. <a href="https://github.com/fzaninotto/CodeFlower">https://github.com/fzaninotto/CodeFlower</a>. Last accessed 2021-06-09.
+            </p>
+          </li>
 
-          <li id="ref-depwheel"><p>https://github.com/fzaninotto/DependencyWheel</p></li>
-          <li id="ref-grammatech"><p>https://www.grammatech.com/products/code-visualization</p></li>
-          <li id="ref-designite"><p>https://www.designite-tools.com/</p></li>
-          <li id="ref-emerge"><p>https://github.com/glato/emerge</p></li>
-          <li id="ref-arkit"><p>https://www.npmjs.com/package/arkit</p></li>
+          <li id="ref-depwheel"><p>
+            Zaninotto F. DependencyWheel. <a href="https://github.com/fzaninotto/DependencyWheel">https://github.com/fzaninotto/DependencyWheel</a>. Last accessed 2021-06-09.
+          </p></li>
+
+          <li id="ref-grammatech"><p>
+            GRAMMATECH. <a href="https://www.grammatech.com/products/code-visualization">https://www.grammatech.com/products/code-visualization</a>. Last accessed 2021-06-09.
+          </p></li>
+
+          <li id="ref-designite"><p>
+            Designite. <a href="https://www.designite-tools.com/">https://www.designite-tools.com/</a>. Last accessed 2021-06-09.
+          </p></li>
+
+          <li id="ref-emerge"><p>
+            Lato G. emerge. <a href="https://github.com/glato/emerge">https://github.com/glato/emerge</a>. Last accessed 2021-06-09.
+          </p></li>
+
+          <li id="ref-arkit"><p>
+            Dyatko M. arkit. <a href="https://www.npmjs.com/package/arkit">https://www.npmjs.com/package/arkit</a>. Last accessed 2021-06-09.
+          </p></li>
           
-          <li id="ref-ndepend"><p>https://www.ndepend.com/</p></li>
-          <li id="ref-imagix"><p>https://www.imagix.com/index.html</p></li>
-          <li id="ref-scitools"><p>https://www.scitools.com/</p></li>
+          <li id="ref-ndepend"><p>
+            NDepend. <a href="https://www.ndepend.com/">https://www.ndepend.com/</a>. Last accessed 2021-06-09.
+          </p></li>
+
+          <li id="ref-imagix"><p>
+            Imagix Corp. Imagix. <a href="https://www.imagix.com/index.html">https://www.imagix.com/index.html</a>. Last accessed 2021-06-09.
+          </p></li>
+          
+          <li id="ref-scitools"><p>
+            SciTools. Understand. <a href="https://www.scitools.com/">https://www.scitools.com/</a>. Last accessed 2021-06-09.
+          </p></li>
+          
           <li id="ref-chotisarn-survey">
             <p>
             Chotisarn N, Merino L, Zheng X, Lonapalawong S, Zhang T, Xu M, Chen W. A systematic literature review of modern software visualization. Journal of Visualization. 2020 Aug;23(4):539-58.
