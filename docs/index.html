@@ -35,7 +35,7 @@
     </section>
 
     <section>
-      <h2>Final Project</h2>
+      <h2>Introduction</h2>
       <p>
         As part of an on-going <a href="https://www.notion.so/Codemap-ec02c79cb0b44304ba10767af1ca3788">research
           project</a>, we explore local interactive software visualizations aimed to help developers explore and locate
@@ -96,8 +96,25 @@
         experience.
       </p>
 
+      <h2>Related work</h2>
+      <p>A very similar approach is Sourcetrail [<a href="#ref-sourcetrail">7</a>]</p>
+
+      <p>Elmqvist et al. present ... [<a href="#ref-elmqvist-hierarchical">8</a>].</p>
+
+      <h2>Challenges</h2>
+      <p>Scalability</p>
+      <p>Comnplexity</p>
+      <p>Performance</p>
+
+      <h2>Visualization</h2>
+      <h3>Methods</h3>
+      <p>
+        In this prototype, we explore how dependencies between methods can be visualized from an initial method using
+        radial tree and hierarchical edge bundling.
+      </p>
+
       <details>
-        <summary>Nested model for legacy prototype</summary>
+        <summary>Nested model for method visualization</summary>
         <div class="nested-model">
           <div class="domain">
             <p><strong>Domain Problem and Data Characterization</strong></p>
@@ -134,6 +151,10 @@
                 </ul>
                 </p>
 
+                <p>
+                  Current path is highlighted.
+                </p>
+
                 <div class="algorithm">
                   <p><strong>Algorithm Design</strong></p>
                   <p>Voronoi, Hyperbolic Layout?, Hierarchical Edge Bundling, Radial Layout</p>
@@ -144,49 +165,6 @@
         </div>
       </details>
 
-      <h2>Related work</h2>
-      <p>A very similar approach is Sourcetrail [<a href="#ref-sourcetrail">7</a>]</p>
-
-      <p>Elmqvist et al. present ... [<a href="#ref-elmqvist-hierarchical">8</a>].</p>
-
-      <h2>Challenges</h2>
-      <p>Scalability</p>
-      <p>Comnplexity</p>
-      <p>Performance</p>
-
-      <h2>Visualization</h2>
-      <h3>Methods</h3>
-      <p>
-        In this prototype, we explore how dependencies between methods can be visualized from an initial method using
-        radial tree and hierarchical edge bundling.
-      </p>
-
-      <details>
-        <summary>Nested model for method level</summary>
-        <div class="nested-model">
-          <div class="domain">
-            <p><strong>Domain Problem and Data Characterization</strong></p>
-
-            <div class="abstraction">
-              <p><strong>Operation and Data Type Abstraction</strong></p>
-              <p>Network graph. Edges are links between artifacts. Nodes are methods.</p>
-
-              <div class="technique">
-                <p><strong>Visual Encoding and Interaction Design</strong></p>
-
-                <p>
-                  Current path is highlighted.
-                </p>
-                
-                <div class="algorithm">
-                  <p><strong>Algorithm Design</strong></p>
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </details>
       <div id='method-level' class="visualization"></div>
       <p class="hint">Refresh the page to change the point of view (i.e., current method)</p>
 
