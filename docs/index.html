@@ -292,7 +292,40 @@
       <p class="hint">Refresh the page to change the point of view (i.e., current class)</p>
 
       <h3>Discussion</h3>
+      <p>
+        Although this visualization lacks some of the features we envisioned, such as a search bar and a miniature of
+        the currently hovered polygon next to the tooltip for the class, we are satisfied with the concept. We believe
+        that the current design does better than the pilot prototype in giving a coherent customized overview that is
+        intuitively understandable and explorable. A detail that we particularly like is the contrast between the
+        greyscale encoding for the polygons' edges and fill, and the complementary accent colors to bring attention the
+        <span style="background-color: aquamarine;">current class</span> and the <span style="background-color:
+        #FF7FAA;">hovered class</span>.
+      </p>
 
+      <p>
+        Moreover, we feel that this iteration is closer conceptually to a map than the previous solution implemented in
+        the pilot prototype using a network graph to visualization the structure hierarchy. Like any map, an overview
+        emerges naturally and is explorable easily either through panning or zooming without gaining or losing critical
+        information or breaking context. Elements are separated by borders of varying sizes depending on their enclosing
+        concept, and an increasingly darker shade encodes the hierarchy's depth using through the cells' background (but
+        never too dark to be unreadable or draw unwanted attention). This format also lends itself naturally to
+        extending abstraction: as we zoom, we can show different information inside the polygon. For example, zooming
+        sufficiently out might only show package names. Conversely, zooming in shows increasing details on the packages,
+        then switches to present information about classes. This extension should mitigate the problem of oversized fonts for their cell, difficult to read text, and difficulty to retain the packages names.
+      </p>
+
+      <p>
+        There are two significant missing features to make this concept whole. The first one, as mentioned previously,
+        is the search bar enabling developers to locate an element directly instead of scanning for it. Still, we can
+        easily imagine how it would be integrated as an extradiegetic control. The second feature is an interactive
+        overlay of relationships between the current and selected classes (through clicking, not currently implemented)
+        encoded with hierarchical edge bundles [<a href="ref-hierarchical-bundles">12</a>].
+      </p>
+
+      <p>
+        Overall, we find this concept promising and are looking forward to exploring and tweaking it further after
+        getting initial feedback from peers and evaluating it.
+      </p>
 
       <!-- 
         Local exploration
