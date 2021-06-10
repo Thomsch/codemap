@@ -217,17 +217,13 @@
        -->
       <h2 id="ref-structure-overview">Structure overview</h2>
       <p>
-        In this prototype, we explore how the class and package hierarchy can be visualized from an initial perspective
-        using Voronoi diagrams. For example using <a
-          href="https://github.com/Kcnarf/d3-voronoi-treemap">d3-voronoi-treemap</a>.
-      </p>
-
-      <p>
-        The prototype aims to solve task X.
+        In this prototype, we explore how the class and package hierarchy can be visualized from the perspective of an
+        initial class using Voronoi diagrams (implemented with <a
+        href="https://github.com/Kcnarf/d3-voronoi-treemap">d3-voronoi-treemap</a>). Drawing from our pilot study, we maximize the use of screen space to avoid having classes and packages unconnected or unreasonably far away.
       </p>
 
       <details>
-        <summary>Nested model for hierarchy concept</summary>
+        <summary>Initial nested model for hierarchy concept</summary>
         <div class="nested-model">
           <div class="domain">
             <p><strong>Domain Problem and Data Characterization</strong></p>
@@ -245,18 +241,13 @@
             <div class="abstraction">
               <p><strong>Operation and Data Type Abstraction</strong></p>
               <p>Transform the class and package hierarchy into a list of parent and children relations. The hierarchy
-                is illustrated with Voronoi treemaps [<a href="#ref-balzer-voronoi-treemap">2</a>];</p>
+                is illustrated with Voronoi treemaps [<a href="#ref-balzer-voronoi-treemap">2</a>].</p>
 
               <div class="technique">
                 <p><strong>Visual Encoding and Interaction Design</strong></p>
 
-                <p>
-                  Simple Radial tree with local node centered. Pan and Zoom
-                  Interactivity features.
-                </p>
-
-                <p>The Voronoi treemap is monochromatic. The cells represent classes and the edges represent class and
-                  packages boundaries.</p>
+                <p>The class and package hierarchy is encoded as a greyscale Voronoi treemap.The cells represent
+                classes and the edges represent class and packages boundaries.</p>
 
                 <p>The current class is encoded with an <span style="background-color:aquamarine">accent color</span>
                   for pre-attentive detection.</p>
@@ -265,14 +256,14 @@
                   class. Here, we use the source lines of code (SLOC) metric to represent the size [<a
                     href="#ref-loc">5</a>]. That way, each cell is characterized by its content visually.</p>
 
-                <p>Hovering displays information regarding the class</p>
+                <p>Hovering displays information regarding the class and enclosing package</p>
 
                 <p>Search bar to find a class quickly.</p>
 
                 <p>Control clicking a class, centers the visualization on it</p>
 
                 <p>Inter class or package relations (e.g., dependencies) can be toggled on and off with an extradiegetic
-                  interface.</p>
+                interface.</p>
 
                 <div class="algorithm">
                   <p><strong>Algorithm Design</strong></p>
@@ -299,6 +290,9 @@
       <div id='vis-macro' class="visualization"></div>
       <div id='vis-macro-legend' class="legend"></div>
       <p class="hint">Refresh the page to change the point of view (i.e., current class)</p>
+
+      <h3>Discussion</h3>
+
 
       <!-- 
         Local exploration
