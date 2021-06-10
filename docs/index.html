@@ -37,67 +37,74 @@
     <section>
       <h2>Introduction</h2>
       <p>
-        As part of an on-going <a href="https://www.notion.so/Codemap-ec02c79cb0b44304ba10767af1ca3788">research
-          project</a>, we explore local interactive software visualizations aimed to help developers explore and locate
-        information about methods and classes necessary to fix bugs and develop new features. We present our findings
-        and results with a short project report and two visualizations.
-      </p>
-
-      <p>
-        In this project, we explore multiple design concepts as well as related work in software visualization.
+        As part of an ongoing <a href="https://www.notion.so/Codemap-ec02c79cb0b44304ba10767af1ca3788">research
+        project</a>, we explore multiple software visualization concepts aimed to help developers explore and locate
+        information about methods and classes necessary to fix bugs and develop new features. We also explore related work in software visualization and visualization evaluation. We present our results with a short project report and two visualizations.
       </p>
 
       <p>
         Previously, we conducted a user study to evaluate if an integrated interactive visualization to an IDE was
-        useful to developers to navigate source code, and find related classes and methods. For this we developed a <a
-          href="https://github.com/amyjzhu/503-hacking/">rough prototype</a> to support the experiment. The
-        visualization used a zooming technique, similar in essence to Google Maps, to move between different levels of
-        abstraction.
+        useful to developers to navigate source code and find related classes and methods [<a
+        href="#ref-codemap">9</a>]. For this we developed a <a
+        href="http://amy.zhucchini.ca/503-hacking/vis/index.html">rough prototype</a> to support the experiment. The
+        visualization used a zooming technique, similar to Google Maps, to move vertically between different levels of
+        abstraction (e.g., low-level implementation details) and horizontally within one abstraction level (e.g.,
+        exploring method dependencies). All the software artifacts (e.g., method, classes, packages) are represented as
+        nodes in a multi-scale network graph where the edges represent the dependency relationships between the
+        artifacts. The visualization is instantiated from the developer's IDE and centered on the class in the text
+        editor. Conversely, control-clicking on a class will switch back to its source code. The visualization is
+        described in more details in <a href="https://github.com/amyjzhu/503-hacking/">its repository</a>.
       </p>
 
       <p>
-        We found that the visualization was generally helpful to the participants. Specifically, the following features
-        were promising:
-
-      <ul>
-        <li>The visualization is initially centered on the class the user is editing</li>
-        <li>Moving seamlessly between levels of abstraction visually (similarly to Google Maps)</li>
-        <li>Switching between the source code of a class and its visualization with a click</li>
-        <li>Exploring dependencies interactively (by clicking on the edge connecting the methods or classes)</li>
-      </ul>
+        Overall, we found that the visualization was generally helpful to the participants. The following
+        features were particularly well-received and promising:
+        <ul>
+          <li>The visualization is initially centered on the class the user is editing</li>
+          <li>Moving seamlessly between levels of abstraction visually (similarly to Google Maps)</li>
+          <li>Switching between the source code of a class and its visualization with a click</li>
+          <li>Exploring dependencies interactively (by clicking on the edge connecting the methods or classes)</li>
+        </ul>
       </p>
 
       <p>
         We also found that the representation of each level of abstraction was lacking. Participants complained that
-        packages, classes, and method were too far apart or too close together, creating occlusion problems in the
+        packages, classes, and methods were too far apart or too close together, creating occlusion problems in the
         latter case. These issues stem from the force layout we used. We also ran into performance and complexity issues
-        with larger code bases that we mitigated with interactive filters and just-in-time rendering.
+        with larger codebases that we mitigated with interactive filters and just-in-time rendering.
       </p>
 
       <p>
-        Thus, with this final project, we aim to explore individual visualization to represent different levels of
+        Thus, with this final project, we aim to explore visualization concepts to represent different levels of
         abstraction in source code capable of addressing these issues. The visualizations will be focused on working
         from a local perspective (i.e., showing dependencies from a given method rather than showing the entire
-        dependency graph) and interactivity based on existing visualization techniques (e.g., Voronoi, Hyperbolic
+        dependency graph) and interactivity on top of existing visualization techniques (e.g., Voronoi, Hyperbolic
         Layout, Hierarchical Edge Bundling, Radial Tree).
       </p>
 
       <p>
-        This project will not implement the mechanisms to blend the visualization of the levels of abstraction, this
-        will be for another time. Additionally, this project will not focus on the integration between the visualization
-        and the IDE because the basic mechanisms were implemented in the previous prototype. Moreover, in the visualization concepts below, we implicitly assume that the visualizations are implemented in the context of a development environment that would update the data model with the most up-to-date information. Crucially, we also implicitly keep the interaction feature of control click introduced in the legacy prototype that enables the user to switch between an element in the visualization to its source code equivalent.
+        This project will not implement the mechanisms to blend the visualization of the levels of abstraction; this
+        will be for another time. Additionally, this project will not focus on integrating the visualization and the IDE
+        because the previous prototype already implemented the basic mechanisms. Moreover, in the visualization concepts
+        below, we implicitly assume that the visualizations are implemented in the context of a development environment
+        that would update the data model with the most up-to-date information. Crucially, we also implicitly keep the
+        interaction feature of control-clicking introduced in the legacy prototype that enables the user to switch
+        between an element in the visualization to its source code equivalent.
+      </p>
+
+      <p>
+        We describe each visualization concept designed for this project using Munzner's nested model [<a href="#ref-munzner">4</a>].
       </p>
 
       <p>
         The report is organized as follows. 
-        First, we explore related work (<a href="#ref-related-work">Related work</a>). 
-        Second, we briefly come back to our initial prototype and user study 
-        (<a href="#ref-background">Background</a>). 
-        Third, we state the main challenges we anticipate to face our visualizations 
+        First, we explore related work 
+        (<a href="#ref-related-work">Related work</a>). 
+        Second, we state the main challenges we anticipate to face our visualizations 
         (<a href="#ref-challenges">Challenges</a>).
-        Fourth, we design and discuss an overview for visualizing the structure of software 
+        Third, we design and discuss an overview for visualizing the structure of software 
         (<a href="#ref-structure-overview">Structure overview</a>).
-        Fifth, we design and discuss a visualization for exploring local method dependencies 
+        Fourth, we design and discuss a visualization for exploring local method dependencies 
         (<a href="#ref-local-exploration">Local exploration</a>).
         Finally, we conclude the project with a brief summary 
         (<a href="#ref-conclusion">Conclusion</a>).
@@ -128,18 +135,6 @@
       <h3>Venues</h3>
       <p>
         Through the course and initial literature survey, we identified relevant venues for software visualization such as <a href="https://chi2021.acm.org/">CHI</a>, <a href="https://uist.acm.org">UIST</a>, <a href="http://ieeevis.org/year/2021/welcome">IEEE VIS</a>, <a href="https://vissoft20.dcc.uchile.cl/">IEEE VISSOFT</a>, <a href="https://www.eurovis.org/">EuroVis</a>, and <a href="https://www.springer.com/journal/12650">Journal of Visualization</a>. These references will be helpful to gather the latest state of the art and communicate our research using the methods and conventions used by the visualization community in addition to the software visualization survey paper [<a href="#ref-chotisarn-survey">24</a>].
-      </p>
-
-      <!-- 
-        Prototype
-       -->
-      <h2 id="ref-background">Background</h2>
-      <p>
-        Below, we present an global overview of Codemap using Munzner's nested model [<a href="#ref-munzner">4</a>]. The
-        closest working implementation is currently the Codemap prototype used to do the initial user study [<a
-          href="#ref-codemap">9</a>]. The goal of the model is to put the accent on the zooming mechanism and general
-        philosophy tying in the visualization experience to the integrated environment in a developer-centered
-        experience.
       </p>
 
       <!-- 
