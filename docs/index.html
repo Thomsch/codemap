@@ -164,6 +164,64 @@
       <div id='method-level' class="visualization"></div>
       <p class="hint">Refresh the page to change the point of view (i.e., current method)</p>
 
+      <p>
+        This visualization was a great learning experience.
+
+        This visualization was the hardest to implement and I had to scale down my ambitions to fit in the course's
+        timeline. However, I found promising examples online that showcase behaviors that I might implement. In this
+        current version however, adjusting the force layout was the most challenging for me, particularly what was the
+        right way to center a node in the force system. With this visualization, I was able to acquire a lot of
+        experience on the d3 force layout and develop my instincts for what is a good visualization for network graphs
+        in the context of software visualization.
+      </p>
+
+      <p>
+        Hyperbolic layout vs Radial layout.
+      </p>
+
+      <p>
+        Color is problematic. Solutions
+      </p>
+
+      <p>
+        As you can see this prototype isn't finished. It lacks several features that would be essential. For example grouping nodes into classes, bundling edges.
+      </p>
+
+      <p>
+        The visualization was useful in uncovering a few insights
+        1) Centering the layout on the method under visualization seem useful. It establishes clearly the object of visualization.
+        2) When a method has no edges
+      </p>
+      <p>
+        I know realize that centering the current node was a good first step but is ultimately insufficient. Indeed, as seen in class, showing more isn't always better. In this particular case, displaying all the nodes is doing the developer a disservice since the task we want to support is to help them explore local relationships from a particular method: they do not need to see unrelated classes and methods at all. They are most likely never going to visit random nodes and edge just like they never open random source files to locate information. They always either 1) follow type dependencies or 2) search for a specific artifact. Thus, we refined our design further.
+      </p>
+
+      <h3>Second iteration</h3>
+
+      <p>
+        For this second design, the amount of information shown is directly controlled by the developer through interaction. The developer would builds the visualization as their own from a minimal initial set of nodes. The hope is that by starting with a minimal visualization, the developer auto-regulate the complexity they need displayed, enabling them to focus on different aspects in function of the information they need at the time.
+
+        Picture this. The visual metaphor is still a network graph with methods and classes represented as nodes, and the edges represent the type of dependencies. The visualization initially shows only direct dependencies related to the method under visualization (referred as 'origin method'). The dependency nodes include type of parameters, type of variables, classes used, method used, and which other methods use the origin method. Incoming and outgoing dependencies are differentiated with corresponding arrows. For example, a node representing a parameter type of the origin method has an incoming arrowed edge to the origin's node while an outgoing arrowed edge would connect to a node representing where the method's is called from. The visualization is still centered on origin method. The related nodes are organized using an augmented force layout where similar nodes tend to group together (e.g., type parameter) or borrowing from topology trees, types or method far away semantically or package wise would be shown less close to the center node than its immediate related nodes such as methods in the same class or package.
+        
+        Clicking on a node (except the origin) will, in turn, expand the dependencies of the clicked node just like for the origin method and center the visualization on this new node of focus. A breadcrumb mechanism highlights the path (i.e., making the edges thicker) between the origin node and the node currently in focus (or hovered) allowing the developer to visually have a reference for tracing back their steps, much like how Ariadne's thread allowed Theseus to escape the Minotaur's labyrinth in the eponym greek myth. We also include an extra-diegetic control on the bottom left of the visualization allows the developer at any time to focus the visualization back to the origin node so they don't have to follow the breadcrumb. This is especially useful if they have explored a large network and do not want to scroll or pan all the way back.
+
+        Hovering on an edge or a node gives contextual clues such as the name of the method, class and parameter similar to how the quick access documentation might show in an IDE. We prefer keeping the amount of textual information on the graph light to not clutter the graph so the developer is encouraged to explore.
+
+        For the developer's comfort, they can also drag, and pin nodes to arrange their graph how they like or see it. We could imagine an advanced feature where we learn their positioning preference automatically to reposition the nodes for them, relying less on the force layout's idiosyncrasies.
+
+        Similarly to the macro visualization concept, we encode the size of the nodes with the size of the method (e.g., SLOC [<a href="#ref-loc">5</a>]) to give the nodes a "physical" anchor to their counterparts. We hope that this will help developers to intuitively form a connexion between the methods' source code and their visual counterparts.
+
+        Finally, edge bundling could be leverage here when the developer zooms back and forth as a way to highlight common fate patterns and be easier on the eye and performance [<a href="#ref-hierarchical-bundles">12</a>].
+      </p>
+
+      <p>
+        To further help the developer parse the graph quickly, we would also encode the node's shape depending on it's type or function. For example, a method is encoded as a circle and an parameter type as a triangle. We would prefer reusing standard shape encodings but we couldn't find any so far in our initial literature review. If methods are exclusively represented as polygons, we briefly considered encoding the method's complexity as the polygon's number of sides to give an additional clue for the developer's exploration. Encoding the number of sides as a linear relationship might be confusing if the method is very complex, although the method would most likely be large in size at the same time so its size encoding might mitigating the confusion. If anything, it could give a strong signal to the developer that they might want to refactor that method [<a href="#ref-refactoring">11</a>]. An alternative would be to split the domain in a stepped range with 3 or 5 options corresponding to increasing orders of complexity that's easy to parse and non-ambiguous.
+      </p>
+
+      <p>Include diagrams of this design</p>
+
+      <p></p>
+
       <h3>Level: macro</h3>
       <p>
         In this prototype, we explore how the class and package hierarchy can be visualized from an initial perspective
@@ -317,6 +375,18 @@
 
           <li id="ref-gource">
             <p>Caudwell A. Gource, <a href="https://gource.io/">https://gource.io/</a>. Last accessed 2021-06-06.</p>
+          </li>
+
+          <li id="ref-refactoring">
+            <p>
+              Fowler M. Refactoring: improving the design of existing code. Addison-Wesley Professional; 2018 Nov 20.
+            </p>
+          </li>
+
+          <li id="ref-hierarchical-bundles">
+            <p>
+              Holten D. Hierarchical edge bundles: Visualization of adjacency relations in hierarchical data. IEEE Transactions on visualization and computer graphics. 2006 Nov 20;12(5):741-8.
+            </p>
           </li>
         </ol>
 
