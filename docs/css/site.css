@@ -147,3 +147,9 @@ details {
         rgb(255, 255, 255) 100%
     );
 }
+
+.hint {
+    text-align: right;
+    font-size: small;
+    font-style: italic;
+}
