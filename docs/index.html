@@ -107,9 +107,28 @@
         Related work
        -->
       <h2 id="ref-related-work">Related work</h2>
-      <p>A very similar approach is Sourcetrail [<a href="#ref-sourcetrail">7</a>]</p>
+      <p>
+        In our initial survey literature, we retained papers that we deemed most relevant and representative to serve as a starting point for snowball sampling [<a href="#ref-snowball">26</a>]. Chotisarn et al., dress an exhaustive portrait of the software visualization research landscape in a recent paper [<a href="#ref-chotisarn-survey">24</a>]. Using a systematic review literature methodology, they retained 105 relevant full papers on software visualization. In addition of highlighting research opportunities, the paper also provide effective tools to orient and scope research in software visualization. This article is thus doubly useful for us. Moreover, they classify the relevant papers by software system aspect (i.e., structure, behavior, evolution [<a href="#ref-diehl">25</a>]), software process (i.e., specification, design & implementation, validation & testing, evolution), and role (i.e., developer, maintainer, manager) as well as visualization technique, mediums and tools.
+      </p>
 
-      <p>Elmqvist et al. present ... [<a href="#ref-elmqvist-hierarchical">8</a>].</p>
+      <p>
+        We identified Pretorius et al. [<a href="#ref-pretorius">13</a>] taxonomy for general tasks in graph networks as a promising source to describe and scope the developer's tasks when software is represented with the metaphor of a network graph such as software artifacts (e.g., classes, methods, packages) are represented as nodes and the relations between them (e.g., dependency, inheritance, flow) as edges.
+        
+        Additionally, Elmqvist et al., [<a href="#ref-elmqvist-hierarchical">8</a>] present a general technique to visualize multi-scale representation of hierarchical information, which is helpful since many aspects of software development are hierarchical (e.g., architecture, dependencies).
+      </p>
+
+      <h3>Solutions</h3>
+      <p>
+        Finally, we explored commercial and open-source solutions to get a picture of the landscape as complete as possible. We found surprisingly many solutions and approaches. Most of them concentrate on audit-type visualizations where big picture is presented to the viewer [<a href="#ref-depwheel">16-21</a>], although a portion of them are bit more "esoteric" such as Gource [<a href="#ref-gource">14</a>] and CodeFlower [<a href="#ref-codeflower">15</a>]. We also found that a minority of solutions are integrated with the developer's workflow [<a href="#ref-ndepend">21-23</a>].
+      </p>
+      <p>
+        We found that NDepend [<a href="#ref-ndepend">21</a>] was the closest to our overall idea, implementing a zooming mechanism enabling the user to drill down at will. See <a href="https://blog.ndepend.com/visualize-code-with-software-architecture-diagrams/">this article</a> for a detailed look. Sourcetrail [<a href="#ref-sourcetrail">7</a>] also caught our attention because it seemed to be the most thoughtful solution out there. Indeed, it addresses a clear problem well and the user interface seems intuitive and well thought-out so as to not overwhelm the viewer.
+      </p>
+
+      <h3>Venues</h3>
+      <p>
+        Through the course and initial literature survey, we identified relevant venues for software visualization such as <a href="https://chi2021.acm.org/">CHI</a>, <a href="https://uist.acm.org">UIST</a>, <a href="http://ieeevis.org/year/2021/welcome">IEEE VIS</a>, <a href="https://vissoft20.dcc.uchile.cl/">IEEE VISSOFT</a>, <a href="https://www.eurovis.org/">EuroVis</a>, and <a href="https://www.springer.com/journal/12650">Journal of Visualization</a>. These references will be helpful to gather the latest state of the art and communicate our research using the methods and conventions used by the visualization community in addition to the software visualization survey paper [<a href="#ref-chotisarn-survey">24</a>].
+      </p>
 
       <!-- 
         Prototype
@@ -375,7 +394,7 @@
         <!-- Vancouver Reference Style -->
         <ol>
           <li id="ref-d3-voronoi-treemap">
-            <p>Kcnarf. "D3 Voronoi Treemap." <a
+            <p>Kcnarf. D3 Voronoi Treemap. <a
                 href="https://github.com/Kcnarf/d3-voronoi-treemap">https://github.com/Kcnarf/d3-voronoi-treemap</a>.
               Last accessed 2021-06-06</p>
           </li>
@@ -395,11 +414,13 @@
               curtain of lines-of-code metrics. InProceedings of the 2020 ACM SIGPLAN International Symposium on New
               Ideas, New Paradigms, and Reflections on Programming and Software 2020</p>
           </li>
-          <li>
-            <p>https://github.com/AlDanial/cloc</p>
+          <li id="ref-loc">
+            <p>
+              AlDanial. cloc. <a href="https://github.com/AlDanial/cloc">https://github.com/AlDanial/cloc</a>. Last accessed 2021-06-09
+            </p>
           </li>
           <li id="ref-sourcetrail">
-            <p>CoatiSoftware. "Sourcetrail." <a href="https://www.sourcetrail.com/">https://www.sourcetrail.com/</a>.
+            <p>CoatiSoftware. Sourcetrail. <a href="https://www.sourcetrail.com/">https://www.sourcetrail.com/</a>.
               Last accessed 2021-06-06.</p>
           </li>
 
@@ -429,6 +450,43 @@
               Holten D. Hierarchical edge bundles: Visualization of adjacency relations in hierarchical data. IEEE Transactions on visualization and computer graphics. 2006 Nov 20;12(5):741-8.
             </p>
           </li>
+
+          <li id="ref-pretorius">
+            <p>
+              Pretorius J, Purchase HC, Stasko JT. Tasks for multivariate network analysis. InMultivariate Network Visualization 2014 (pp. 77-95). Springer, Cham.
+            </p>
+          </li>
+
+          <li id="ref-gource"><p>https://gource.io/</p></li>
+          <li id="ref-codeflower"><p>https://github.com/fzaninotto/CodeFlower</p></li>
+
+          <li id="ref-depwheel"><p>https://github.com/fzaninotto/DependencyWheel</p></li>
+          <li id="ref-grammatech"><p>https://www.grammatech.com/products/code-visualization</p></li>
+          <li id="ref-designite"><p>https://www.designite-tools.com/</p></li>
+          <li id="ref-emerge"><p>https://github.com/glato/emerge</p></li>
+          <li id="ref-arkit"><p>https://www.npmjs.com/package/arkit</p></li>
+          
+          <li id="ref-ndepend"><p>https://www.ndepend.com/</p></li>
+          <li id="ref-imagix"><p>https://www.imagix.com/index.html</p></li>
+          <li id="ref-scitools"><p>https://www.scitools.com/</p></li>
+          <li id="ref-chotisarn-survey">
+            <p>
+            Chotisarn N, Merino L, Zheng X, Lonapalawong S, Zhang T, Xu M, Chen W. A systematic literature review of modern software visualization. Journal of Visualization. 2020 Aug;23(4):539-58.
+            </p>
+          </li>
+
+          <li id="ref-diehl">
+            <p>
+              Diehl S. Software visualization: visualizing the structure, behaviour, and evolution of software. Springer Science & Business Media; 2007 May 1.
+            </p>
+          </li>
+
+          <li id="ref-snowball">
+            <p>
+              Wohlin C. Guidelines for snowballing in systematic literature studies and a replication in software engineering. InProceedings of the 18th international conference on evaluation and assessment in software engineering 2014 May 13 (pp. 1-10).
+            </p>
+          </li>
+
         </ol>
       </section>
 
