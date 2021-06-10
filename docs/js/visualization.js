@@ -217,7 +217,7 @@ function visualizeMethods(container, data, classes) {
     .on("tick", tick);
 
     node.on('mouseover', function(e, d) {
-      tooltip.text(d.name)
+      tooltip.text(d.id)
     })
     .on('mouseout', function() {
       tooltip.text("")
