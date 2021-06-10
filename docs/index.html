@@ -146,15 +146,76 @@
         Challenges
        -->
       <h2 id="ref-challenges">Challenges</h2>
-      <p>Scalability</p>
-      <p>Comnplexity</p>
-      <p>Performance</p>
-      <p>Other challenges from the report</p>
 
-       <p>Evaluation</p>
-       The next step is to evaluate the efficiency and efficacy of the visualizations explored in this project. We
-       propose several strategies to evaluate the visualizations based on related work seen in class and in the
-       literature.
+      <p>
+        In this section, we list some of the challenges we'll face in visualizing software and discuss potential
+        solutions.
+      </p>
+      
+      <h3>Perception</h3>
+      <p>
+        The biggest challenge is to design a readable visualization by the user of the visualization, the developer. It
+        is vital in visualizing software as the complexity of source code can explode very fast. We know that human
+        perception has limits and conditions, as seen during the course with Healy et al. [<a
+        href="#ref-healey-attention">27</a>] notably. A good example of this phenomenon is the  <em>Deutsch limit</em>
+        suggesting that humans have a fairly low limit on the number of entities they can keep in memory at any given
+        moment [<a href="#ref-deutsch">28</a>] (Has the Deutsch limit ever been verified? I remember reading an article
+        where the actual number was way below the Deutsch limit).
+      </p>
+
+      <p>
+        While difficult to remove entirely, there are several options to mitigate the strain placed on the user. In our
+        initial prototype, the zooming mechanism enabling vertical exploration (i.e., low-level implementation details
+        to high-level abstraction) already "slices" the visualization in various visualizations that are conceptually
+        different, so we do not show low-level details mixed with high-level details abstractions. 
+    
+        Moreover, using specific filtering and interaction techniques for each visualization concept enables us to fully
+        leverage the visualization support for this level and ease the visualization experience.
+      </p>
+
+      <p>
+        Another important feature we can include is supporting visual scanning through pre-attentive perception. We
+        implement this principle in our design concepts by using grayscale colors for the bulk of the elements shown and
+        using accent colors to bring attention to important elements that need to "pop."
+      </p>
+
+      <h3>Representation</h3>
+      <p>
+        Representing software is difficult because it doesn't have an inherent physical representation that the
+        developer can identify intuitively. The same observation was made by Tufte regarding the conundrum of
+        representing <em>information</em> such as comparing two measures, or more generally showing statistics [<a
+        href="#ref-tufte">29</a>]. Fortunately, this is somewhat mitigated by the fact that developers are used to
+        thinking abstractly and already use common symbols (e.g., UML) to communicate more or less formally about
+        software systems, behavior, and architecture. Nonetheless, we need to be careful that the visualization is not
+        going against these colloquially accepted symbols and that we stay consistent across the visualization levels.
+        In a sense, we will need to build a consistent visual grammar in syntax across the visualization levels.       
+      </p>
+
+      <p>
+        Another concern is how to layout the different elements shown in the visualization. We have seen established
+        strategies in class that address the question. Still, in representing some aspects of the software as a network
+        graph, the answers are not as clear cut as gathered in our initial user study. In one visualization concept, we
+        explore an adapted approach to represent a coherent overview of the structure of a system. In the other concept,
+        we explore how to represent a network graph using various techniques.
+      </p>
+
+      <h3>Performance</h3>
+      <p>
+        The lecture on "Scalable Visualization" gave us many pointers to make our visualization efficient and
+        responsive. More importantly, it gave us a good insight into how much work is required to handle visualizations
+        with a large amount of data as it may be the case in the context of visualizing software -- That is, without
+        even considering the inherent scalability issues for parsing the source code alone.
+      </p>
+
+      <h3>Evaluation</h3>
+      <p>
+        Lastly, we need to address how to evaluate our concepts as seen in class with Nekrasovski et al. [<a
+        href="#ref-nekra">30</a>], it's crucial to gather user feedback as soon as possible and continue to do so when
+        significant changes have been made.  We already conducted user feedback in an early user study on a rough
+        prototype. As we advance, we will evaluate our different visualizations using the techniques seen in the course
+        and literature. Additionally, we can now qualify the performance of visualization to the task it's intended to
+        solve in terms of efficiency and efficacy.
+      </p>
 
        <!-- 
         Structure overview
@@ -489,6 +550,18 @@
             <p>
               Wohlin C. Guidelines for snowballing in systematic literature studies and a replication in software engineering. InProceedings of the 18th international conference on evaluation and assessment in software engineering 2014 May 13 (pp. 1-10).
             </p>
+          </li>
+
+          <li id="ref-healey-attention">
+            <p>Healey C, Enns J. Attention and visual memory in visualization and computer graphics. IEEE transactions on visualization and computer graphics. 2011 Jul 28;18(7):1170-88.</p>
+          </li>
+
+          <li id="ref-deutsch">
+            <p>L. Peter Deutsch. Deutsch limit. http://www.faqs.org/faqs/visual-lang/faq/. Last accessed 2021-06-09</p>
+          </li>
+
+          <li id="ref-tufte">
+            <p>Tufte ER, Goeler NH, Benson R. Envisioning information. Cheshire, CT: Graphics press; 1990 Jan 3.</p>
           </li>
 
         </ol>
